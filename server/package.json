@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/murieletrentini/wed2Project#readme",
   "dependencies": {
-    "jquery": "^3.1.1"
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "method-override": "^2.3.6"
   }
 }
