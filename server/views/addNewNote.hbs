@@ -1,0 +1,22 @@
+<html>
+<form action='/addNewNote' method='post'>
+	<label>Titel
+		<input type="text">
+	</label>
+	<label>Beschreibung
+		<textarea></textarea>
+	</label>
+	<label>Wichtigkeit
+		<input type="radio" name="importance" value="1" checked>1
+		<input type="radio" name="importance" value="2" checked>2
+		<input type="radio" name="importance" value="3" checked>3
+		<input type="radio" name="importance" value="4" checked>4
+		<input type="radio" name="importance" value="5" checked>5
+	</label>
+	<label>Erledigt bis
+		<input type="date">
+	</label>
+	<button type="submit">Speichern</button>
+	<button type="reset">Abbrechen</button>
+</form>
+</html>
