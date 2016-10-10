@@ -21,6 +21,7 @@ app.use(require("method-override")(function(req, res){
 }));
 
 app.use(require('./routes/notesRoutes.js'));
+app.use(express.static(__dirname + '/public'));
 
 hbs.registerHelper('if_eq', function(a, b, opts) {
 	if(a == b)

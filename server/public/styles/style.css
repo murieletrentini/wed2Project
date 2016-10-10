@@ -1,3 +1,72 @@
-body{
-    background-color: blue;
+/**RESET**/
+*{
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    font: 14px Helvetica, Arial;
+}
+/**GENERAL**/
+.content {
+    margin: 1em 20%;
+    min-width: 20em;
+}
+header{
+    border-bottom: 1px solid lightgray;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1em;
+}
+h1{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/**BUTTONS**/
+button{
+    border: 1px solid gray;
+    border-radius: 5px;
+    width: 140px;
+    height: 40px;
+    background-color: transparent;
+}
+button:hover{
+    background-color: #F1F1F1;
+    cursor: hand;
+}
+
+/**SELECT**/
+#styleSwitcher{
+    height: 40px;
+    width: 140px;
+}
+/**FIELDSET**/
+fieldset{
+    border: none;
+    margin-top: 1em;
+    padding: 1em;
+}
+
+/**FORMS**/
+#newNote{
+}
+#newNote > label{
+    width: 100%;
+    font-weight: bold;
+}
+#newNote > button{
+    margin-left: 20%;
+}
+label > input{
+    float: right;
+    border-radius: 3px;
+    height: 40px;
+    border: 1px solid lightgray;
+    width: 80%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+label > textarea{
+    height: 80px;
+    float: right;
+    width:80%;
 }

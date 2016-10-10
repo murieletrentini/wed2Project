@@ -1,22 +1,28 @@
 <html>
-<form action='/addNewNote' method='post'>
-	<label>Titel
-		<input type="text">
+<head>
+<link href="styles/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="content">
+<header>
+    <h1>New Note</h1>
+</header>
+<form action='/addNewNote' method='post' id="newNote">
+	<label>Title
+		<input type="text" class="textInput">
 	</label>
-	<label>Beschreibung
-		<textarea></textarea>
+	<label>Description
+		<textarea class="textInput"></textarea>
 	</label>
-	<label>Wichtigkeit
-		<input type="radio" name="importance" value="1" checked>1
-		<input type="radio" name="importance" value="2" checked>2
-		<input type="radio" name="importance" value="3" checked>3
-		<input type="radio" name="importance" value="4" checked>4
-		<input type="radio" name="importance" value="5" checked>5
+	<label>Priority
+        <input type="number" name="importance" min="1" max="5">
 	</label>
-	<label>Erledigt bis
+	<label>To do until
 		<input type="date">
 	</label>
-	<button type="submit">Speichern</button>
-	<button type="reset">Abbrechen</button>
+	<button type="submit">Save</button>
+	<button type="reset">Cancel</button>
 </form>
+</div>
+</body>
 </html>

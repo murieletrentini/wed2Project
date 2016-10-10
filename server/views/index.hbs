@@ -1,20 +1,30 @@
 <html>
-<label><select>
-	<option>Style1</option>
-	<option>Style2</option>
-</select>
-</label>
+<head>
+<link href="styles/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="content">
 <form action="/addNewNote" method="get">
 	<button type="submit" name="submit" value="addNewNote">Create new Note</button>
+    <button type="submit" name="submit" value="showFinished">Show Finished</button>
+
 </form>
+    <label>
+        <select id="styleSwitcher">
+            <option>Style 1</option>
+            <option>Style 2</option>
+        </select>
+    </label>
 <form action="/getNotes" method="get">
-	<fieldset><legend>sort by</legend>
-		<button type="submit" name="submit" value="finishDate">Finish Date</button>
-		<button type="submit" name="submit" value="createdDate">created Date</button>
-		<button type="submit" name="submit" value="importance">Importance</button>
+	<fieldset><legend>Sort by</legend>
+		<button type="submit" name="submit" value="dateDue">Date Due</button>
+		<button type="submit" name="submit" value="dateCreated">Date Created</button>
+		<button type="submit" name="submit" value="priority">Priority</button>
 	</fieldset>
-	<button type="submit" name="submit" value="showFinished">Show Finished</button>
 </form>
 
 <div id="noteContainer"></div>
+
+</div>
+</body>
 </html>
