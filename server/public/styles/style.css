@@ -2,13 +2,13 @@
 *{
     padding: 0;
     margin: 0;
-    display: inline-block;
     font: 14px Helvetica, Arial;
 }
 /**GENERAL**/
 .content {
-    margin: 1em 20%;
-    min-width: 20em;
+    display: flex;
+    flex-direction: column;
+    margin: 1em 10%;
 }
 header{
     border-bottom: 1px solid lightgray;
@@ -20,6 +20,10 @@ h1{
     font-size: 24px;
     font-weight: bold;
 }
+.noteListTop {
+    display: flex;
+    justify-content: space-between;
+}
 
 /**BUTTONS**/
 button{
@@ -28,6 +32,7 @@ button{
     width: 140px;
     height: 40px;
     background-color: transparent;
+    margin-bottom: 1em;
 }
 button:hover{
     background-color: #F1F1F1;
@@ -47,26 +52,25 @@ fieldset{
 }
 
 /**FORMS**/
-#newNote{
-}
 #newNote > label{
-    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-weight: bold;
 }
-#newNote > button{
-    margin-left: 20%;
+.buttonSection{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
-label > input{
-    float: right;
+label > input:not(#doneCheck){
     border-radius: 3px;
     height: 40px;
     border: 1px solid lightgray;
     width: 80%;
-    margin-top: 1em;
-    margin-bottom: 1em;
+    margin: 1em 0;
 }
 label > textarea{
     height: 80px;
-    float: right;
     width:80%;
 }

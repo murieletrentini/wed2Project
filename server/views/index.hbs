@@ -1,17 +1,19 @@
-
 <div class="content">
-<form action="/addNewNote" method="get">
+    <header>
+        <h1>Note List</h1>
+    </header>
+<form action="/addNewNote" method="get" class="noteListTop">
 	<button type="submit" name="submit" value="addNewNote">Create new Note</button>
-    <button type="submit" name="submit" value="showFinished">Show Finished</button>
-
-</form>
-    <label>
+    <label class="noteListMiddle">
         <select id="styleSwitcher">
             <option>Style 1</option>
             <option>Style 2</option>
         </select>
     </label>
-<form action="/getNotes" method="get">
+
+</form>
+    <form action="/" method="get"><input type="hidden" method="_show_finished"><button type="submit" method="get">Show Finished</button></form>
+<form action="/getNotes" method="get" class="noteListBottom">
 	<fieldset><legend>Sort by</legend>
 		<button type="submit" name="submit" value="dateDue">Date Due</button>
 		<button type="submit" name="submit" value="dateCreated">Date Created</button>
