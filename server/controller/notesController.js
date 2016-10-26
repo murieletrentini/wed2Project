@@ -10,6 +10,10 @@ module.exports.addNewNote = function(req, res)
 	res.render("addNewNote");
 };
 
+module.exports.saveNote = function(req, res){
+	//store.add()
+};
+
 module.exports.getNotes = function(req, res)
 {
 	store.get(req.params.id, function(err, notes) {

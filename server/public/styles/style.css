@@ -30,6 +30,7 @@ button{
     border: 1px solid gray;
     border-radius: 5px;
     width: 140px;
+    min-width:140px;
     height: 40px;
     background-color: transparent;
     margin-bottom: 1em;
@@ -73,4 +74,60 @@ label > input:not(#doneCheck){
 label > textarea{
     height: 80px;
     width:80%;
+}
+
+/**NOTE**/
+.note{
+    display:flex;
+    align-content: stretch;
+    border: 1px solid black;
+    flex: 1 1 50%;
+}
+#noteContent{
+    flex-grow: 5;
+}
+
+/**RATINGSTARS**/
+.hide {
+    display: none;
+}
+
+.clear {
+    float: none;
+    clear: both;
+}
+
+.rating {
+    width: 90px;
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    text-align: center;
+    position: relative;
+}
+
+.rating > label {
+    float: right;
+    display: inline;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    width: 1.1em;
+    cursor: pointer;
+    color: #000;
+}
+
+.rating > label:hover,
+.rating > label:hover ~ label,
+.rating > input.radio-btn:checked ~ label {
+    color: transparent;
+}
+
+.rating > label:hover:before,
+.rating > label:hover ~ label:before,
+.rating > input.radio-btn:checked ~ label:before,
+.rating > input.radio-btn:checked ~ label:before {
+    content: "\2605";
+    position: absolute;
+    left: 0;
+    color: #FFD700;
 }

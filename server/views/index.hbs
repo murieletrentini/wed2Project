@@ -2,25 +2,46 @@
     <header>
         <h1>Note List</h1>
     </header>
-<form action="/addNewNote" method="get" class="noteListTop">
-	<button type="submit" name="submit" value="addNewNote">Create new Note</button>
-    <label class="noteListMiddle">
-        <select id="styleSwitcher">
-            <option>Style 1</option>
-            <option>Style 2</option>
-        </select>
-    </label>
-
-</form>
+    <form action="/addNewNote" method="post" class="noteListTop">
+        <button type="submit">Create new Note</button>
+    </form>
+    <select id="styleSwitcher">
+        <option>Style 1</option>
+        <option>Style 2</option>
+    </select>
     <form action="/" method="get"><input type="hidden" method="_show_finished"><button type="submit" method="get">Show Finished</button></form>
-<form action="/getNotes" method="get" class="noteListBottom">
-	<fieldset><legend>Sort by</legend>
-		<button type="submit" name="submit" value="dateDue">Date Due</button>
-		<button type="submit" name="submit" value="dateCreated">Date Created</button>
-		<button type="submit" name="submit" value="priority">Priority</button>
-	</fieldset>
-</form>
+    <form action="/getNotes" method="get" class="noteListBottom">
+        <fieldset><legend>Sort by</legend>
+            <button type="submit" name="submit" value="dateDue">Date Due</button>
+            <button type="submit" name="submit" value="dateCreated">Date Created</button>
+            <button type="submit" name="submit" value="priority">Priority</button>
+        </fieldset>
+    </form>
 
-<div id="noteContainer"></div>
+<div id="noteContainer">
+    <div class="note">
+    <input type="checkbox"> Finished</input>
+
+        <label content="Note Title">Note Title
+        <textarea id="noteContent" name="noteContent" disabled>Sample content</textarea></label>
+        <form>
+            <div class="rating">
+                <input id="star5" name="star" type="radio" value="5" class="radio-btn hide" />
+                <label for="star5" >☆</label>
+                <input id="star4" name="star" type="radio" value="4" class="radio-btn hide" />
+                <label for="star4" >☆</label>
+                <input id="star3" name="star" type="radio" value="3" class="radio-btn hide" />
+                <label for="star3" >☆</label>
+                <input id="star2" name="star" type="radio" value="2" class="radio-btn hide" />
+                <label for="star2" >☆</label>
+                <input id="star1" name="star" type="radio" value="1" class="radio-btn hide" />
+                <label for="star1" >☆</label>
+                <div class="clear"></div>
+            </div>
+        </form>
+
+        <button type="submit" name="edit" value="edit">Edit</button>
+    </div>
+</div>
 
 </div>
