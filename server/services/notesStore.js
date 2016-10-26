@@ -1,19 +1,18 @@
 var Datastore = require('nedb');
 var db = new Datastore({ filename: './data/order.db', autoload: true });
 
-function Note(noteTitle, description, importance, dueDate)
+function Note(noteTitle, description, priority, dueDate)
 {
 	this.noteTitle = noteTitle;
-	this.discription = discription;
-	this.importance = importance;
+	this.description = description;
+	this.priority = priority;
 	this.dueDate = dueDate;
 	this.state = "pending";
 }
 
-
-function publicAddNote(noteTitle, description, importance, dueDate, callback)
+function publicAddNote(noteTitle, description, priority, dueDate, callback)
 {
-	var note = new Note(noteTitle, description, importance, dueDate);
+	var note = new Note(noteTitle, description, priority, dueDate);
 
 	db.insert(note, function(err, newDoc){
 		if(callback){
