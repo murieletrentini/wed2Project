@@ -1,8 +1,7 @@
 var Datastore = require('nedb');
-var db = new Datastore({ filename: './data/order.db', autoload: true });
+var db = new Datastore({filename: '../data/order.db', autoload: true});
 
-function Note(noteTitle, description, priority, dueDate)
-{
+function Note(noteTitle, description, priority, dueDate) {
 	this.noteTitle = noteTitle;
 	this.description = description;
 	this.priority = priority;
@@ -10,12 +9,11 @@ function Note(noteTitle, description, priority, dueDate)
 	this.state = "pending";
 }
 
-function publicAddNote(noteTitle, description, priority, dueDate, callback)
-{
+function publicAddNote(noteTitle, description, priority, dueDate, callback) {
 	var note = new Note(noteTitle, description, priority, dueDate);
 
-	db.insert(note, function(err, newDoc){
-		if(callback){
+	db.insert(note, function (err, newDoc) {
+		if (callback) {
 			callback(err, newDoc);
 		}
 	});
@@ -23,15 +21,21 @@ function publicAddNote(noteTitle, description, priority, dueDate, callback)
 
 function publicFinished(id, callback) {
 	db.update({_id: id}, {$set: {"state": "finished"}}, {}, function (err, doc) {
-		publicGet(id,callback);
+		publicGet(id, callback);
 	});
 }
 
-function publicGet(id, callback)
-{   db.findOne({ _id: id }, function (err, doc) {
-	callback( err, doc);
-});
+function publicGet(id, callback) {
+	db.findOne({_id: id}, function (err, doc) {
+		callback(err, doc);
+	});
+}
+
+function  publicGetAll(callback) {
+	db.find({}, function (err, docs) {
+		callback(err, docs);
+	});
 }
 
 
-module.exports = {add : publicAddNote, finish : publicFinished, get : publicGet};
+module.exports = {add: publicAddNote, finish: publicFinished, get: publicGet, getAll: publicGetAll};
