@@ -6,7 +6,7 @@ function Note(noteTitle, description, priority, dueDate) {
 	this.description = description;
 	this.priority = priority;
 	this.dueDate = dueDate;
-	this.state = "pending";
+	this.finished = "false";
 }
 
 function publicAddNote(noteTitle, description, priority, dueDate, callback) {
@@ -20,7 +20,7 @@ function publicAddNote(noteTitle, description, priority, dueDate, callback) {
 }
 
 function publicFinished(id, callback) {
-	db.update({_id: id}, {$set: {"state": "finished"}}, {}, function (err, doc) {
+	db.update({_id: id}, {$set: {"finished": "true"}}, {}, function (err, doc) {
 		publicGet(id, callback);
 	});
 }

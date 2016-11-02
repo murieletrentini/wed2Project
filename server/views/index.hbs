@@ -18,14 +18,15 @@
         </fieldset>
     </form>
 
-<div id="noteContainer">
+<form id="noteContainer" action="/editNote" method="post">
     {{#each notes}}
 		<span>{{dueDate}}</span>
 		<p>{{noteTitle}}</p>
 		<span>{{importance}}</span>
-		<input type="checkbox"> Finished</input>
+		<input type="checkbox" {{#if finished}}checked{{/if}} disabled> Finished</input>
 		<textarea name="noteContent" disabled>{{description}}</textarea>
-		<button>edit</button>
+		<input type="hidden" name="_id" value="{{_id}}">
+		<button type="submit">edit</button>
     {{/each}}
-</div>
+</form>
 </div>

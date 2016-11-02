@@ -27,6 +27,10 @@ module.exports.saveNote = function (req, res, data) {
 	});
 };
 
+module.exports.editNote = function (req, res, data) {
+	//TODO: implement edit functionality
+};
+
 module.exports.getNotes = function (req, res) {
 	store.get(req.params.id, function (err, notes) {
 		res.render("index", notes);
