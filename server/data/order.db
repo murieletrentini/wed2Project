@@ -1,14 +1,10 @@
-{"noteTitle":"wqdq","description":"description","priority":1,"dueDate":"Wed Nov 02 2016 14:31:24 GMT+0100 (CET)","state":"pending","_id":"0bnUd0FztowNGqo8"}
-{"noteTitle":"wdqwq","description":"description","priority":1,"dueDate":"Wed Nov 02 2016 14:55:13 GMT+0100 (CET)","state":"pending","_id":"8Og1TGl9urZkgJXM"}
-{"noteTitle":"we2e12e1","description":"dqwdqw","priority":4,"dueDate":"Wed Nov 02 2016 14:55:26 GMT+0100 (CET)","state":"pending","_id":"9zSycQbtwRhc6yLm"}
-{"noteTitle":"hfeoihf","description":"fweewq","priority":2,"dueDate":"Wed Nov 02 2016 14:58:47 GMT+0100 (CET)","state":"pending","_id":"GHShuLzo9l6PT0dB"}
-{"noteTitle":"wdqwq","description":"description","priority":1,"dueDate":"Wed Nov 02 2016 14:34:45 GMT+0100 (CET)","state":"pending","_id":"X8Q6FshLcvQcPgXu"}
-{"noteTitle":"wdqwq","description":"description","priority":1,"dueDate":"Wed Nov 02 2016 14:34:10 GMT+0100 (CET)","state":"pending","_id":"aRYiDGxmedZuS8J9"}
-{"noteTitle":"hallo","description":"duda","priority":2,"dueDate":"Wed Nov 02 2016 14:29:55 GMT+0100 (CET)","state":"pending","_id":"d29OzNw64N2uqeYg"}
-{"noteTitle":"title","description":"description","priority":1,"dueDate":"Wed Nov 02 2016 14:56:55 GMT+0100 (CET)","state":"pending","_id":"dj916uSW5PgaDZUm"}
-{"noteTitle":"title","description":"description","priority":1,"dueDate":"Wed Nov 02 2016 14:28:37 GMT+0100 (CET)","state":"pending","_id":"feo0ANBb3XQ4W4wC"}
-{"noteTitle":"wdqwq","description":"description","priority":1,"dueDate":"Wed Nov 02 2016 14:33:14 GMT+0100 (CET)","state":"pending","_id":"tAg3ckPAjjcdqEhu"}
-{"noteTitle":"hfeoihf","description":"fweewq","priority":2,"dueDate":"Wed Nov 02 2016 14:58:03 GMT+0100 (CET)","state":"pending","_id":"xhabAk0Nl0SAoVQ4"}
-{"noteTitle":"hfeoihf","description":"fweewq","priority":2,"dueDate":"Wed Nov 02 2016 15:08:03 GMT+0100 (CET)","finished":"false","_id":"C9bHiZMBsv450Rzr"}
-{"noteTitle":"hfeoihf","description":"fweewq","priority":2,"dueDate":"Wed Nov 02 2016 15:08:19 GMT+0100 (CET)","finished":"false","_id":"BEVETxeR4TSMAJvK"}
-{"noteTitle":"hfeoihf","description":"fweewq","priority":2,"dueDate":"Wed Nov 02 2016 15:10:02 GMT+0100 (CET)","finished":"false","_id":"kXa5ycJsobuPfjNy"}
+{"noteTitle":"Test","description":"ehrlich mal testen","priority":1,"dueDate":{"$$date":1478476800000},"done":"false","_id":"AIQmPkZHl64oORCr"}
+{"noteTitle":"dwqqd","description":"wweqeqwe","priority":4,"dueDate":"Thu Nov 03 2016 16:00:57 GMT+0100 (CET)","done":"true","_id":"a2TCIG9PA4Hfk7EU"}
+{"noteTitle":"title","description":"description","priority":1,"dueDate":"Thu Nov 03 2016 15:55:02 GMT+0100 (CET)","done":"false","_id":"eda12MD5G9nWXK31"}
+{"noteTitle":"dwqdq","description":"111","priority":2,"dueDate":"Thu Nov 03 2016 15:56:51 GMT+0100 (CET)","done":"false","_id":"etUMHwDOTUl2WVw7"}
+{"noteTitle":"Test2","description":"nochmals testen. mit finished","priority":1,"dueDate":"Thu Nov 03 2016 15:39:45 GMT+0100 (CET)","done":"true","_id":"qhPE7zJHTBkKHa7d"}
+{"noteTitle":"noch eine","description":"n^znslqü2","priority":1,"dueDate":{"$$date":1570572000000},"done":"true","_id":"sB8OuNVBDrWvBkLB"}
+{"noteTitle":"huhu","description":"1234","priority":1,"dueDate":"Thu Nov 03 2016 16:03:37 GMT+0100 (CET)","done":"true","_id":"t0JPkINqjGGWkGk8"}
+{"noteTitle":"test3","description":"hallo test","priority":1,"dueDate":{"$$date":1510272000000},"done":"true","_id":"wDQ2gqsoFon2QZXC"}
+{"noteTitle":"dwqdqe21313dsqdsa","description":"qwqwdwqdqdqdqw","priority":2,"dueDate":"Thu Nov 03 2016 16:12:16 GMT+0100 (CET)","done":"false","_id":"XzlwhxHfkJDUSw2Z"}
+{"noteTitle":"dwqdqe21313dsqdsa","description":"qwqwdwqdqdqdqw","priority":2,"dueDate":"Thu Nov 03 2016 16:41:57 GMT+0100 (CET)","done":"false","_id":"by3TVgR4hv1XaokV"}
