@@ -1,10 +1,1 @@
-{"noteTitle":"Test","description":"ehrlich mal testen","priority":1,"dueDate":{"$$date":1478476800000},"done":"false","_id":"AIQmPkZHl64oORCr"}
-{"noteTitle":"dwqqd","description":"wweqeqwe","priority":4,"dueDate":"Thu Nov 03 2016 16:00:57 GMT+0100 (CET)","done":"true","_id":"a2TCIG9PA4Hfk7EU"}
-{"noteTitle":"title","description":"description","priority":1,"dueDate":"Thu Nov 03 2016 15:55:02 GMT+0100 (CET)","done":"false","_id":"eda12MD5G9nWXK31"}
-{"noteTitle":"dwqdq","description":"111","priority":2,"dueDate":"Thu Nov 03 2016 15:56:51 GMT+0100 (CET)","done":"false","_id":"etUMHwDOTUl2WVw7"}
-{"noteTitle":"Test2","description":"nochmals testen. mit finished","priority":1,"dueDate":"Thu Nov 03 2016 15:39:45 GMT+0100 (CET)","done":"true","_id":"qhPE7zJHTBkKHa7d"}
-{"noteTitle":"noch eine","description":"n^znslqü2","priority":1,"dueDate":{"$$date":1570572000000},"done":"true","_id":"sB8OuNVBDrWvBkLB"}
-{"noteTitle":"huhu","description":"1234","priority":1,"dueDate":"Thu Nov 03 2016 16:03:37 GMT+0100 (CET)","done":"true","_id":"t0JPkINqjGGWkGk8"}
-{"noteTitle":"test3","description":"hallo test","priority":1,"dueDate":{"$$date":1510272000000},"done":"true","_id":"wDQ2gqsoFon2QZXC"}
-{"noteTitle":"dwqdqe21313dsqdsa","description":"qwqwdwqdqdqdqw","priority":2,"dueDate":"Thu Nov 03 2016 16:12:16 GMT+0100 (CET)","done":"false","_id":"XzlwhxHfkJDUSw2Z"}
-{"noteTitle":"dwqdqe21313dsqdsa","description":"qwqwdwqdqdqdqw","priority":2,"dueDate":"Thu Nov 03 2016 16:41:57 GMT+0100 (CET)","done":"false","_id":"by3TVgR4hv1XaokV"}
+{"noteTitle":"test","description":"hallo","priority":2,"dueDate":"Fri Nov 04 2016 12:16:12 GMT+0100 (CET)","done":false,"_id":"3JLKpwvuy1f4bkwZ"}

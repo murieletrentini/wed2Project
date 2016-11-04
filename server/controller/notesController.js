@@ -14,7 +14,7 @@ module.exports.saveNote = function (req, res, data) {
 	var description = String(req.body.noteDescription || "description");
 	var priority = Number(req.body.star || 1);
 	var dueDate = new Date(req.body.dueDate);
-	var done = req.body.doneCheck == 'on' ? 'true': 'false';
+	var done = req.body.doneCheck == 'on';
 	if (dueDate == 'Invalid Date') {
 		dueDate = Date()
 	}
