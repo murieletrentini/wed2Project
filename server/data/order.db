@@ -1,4 +1,3 @@
-{"noteTitle":"dqwqd","description":"weeeqw","priority":3,"dueDate":{"$$date":1478345602410},"done":false,"_id":"3QYDEnFdP7bOULja"}
-{"noteTitle":"dqwqd","description":"weeeqw","priority":3,"dueDate":{"$$date":1478345527269},"done":false,"_id":"RIfIW2YR8vquTWSn"}
-{"noteTitle":"dqwqd","description":"weeeqw","priority":3,"dueDate":{"$$date":1478345565467},"done":false,"_id":"u3eVuT1g0BPQvnht"}
-{"noteTitle":"dqwqd","description":"weeeqw","priority":3,"dueDate":{"$$date":1478345815827},"done":false,"_id":"qwob7Tn0XTG8zsgu"}
+{"noteTitle":"Title","description":"blabla","priority":3,"dueDate":{"$$date":1478345602410},"done":false,"_id":"3QYDEnFdP7bOULja"}
+{"noteTitle":"Einkaufen","description":"käse, milch","priority":3,"dueDate":{"$$date":1478346124309},"done":false,"_id":"BsBG4CL96lrLdRbO"}
+{"noteTitle":"Test","description":"hallo du","priority":4,"dueDate":{"$$date":1478345527269},"done":false,"_id":"RIfIW2YR8vquTWSn"}

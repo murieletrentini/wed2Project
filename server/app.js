@@ -9,6 +9,7 @@ var app = express();
 
 // view engine setup
 hbs.registerHelper('dateFormat', require('handlebars-dateformat'));
+hbs.registerHelper('multiply', require('./helpers/multiply'));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 

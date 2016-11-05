@@ -87,7 +87,7 @@ label > textarea{
     flex-grow: 5;
 }
 
-/**RATINGSTARS**/
+/**PRIORITY**/
 .hide {
     display: none;
 }
@@ -126,7 +126,7 @@ label > textarea{
 .rating > label:hover ~ label:before,
 .rating > input.radio-btn:checked ~ label:before,
 .rating > input.radio-btn:checked ~ label:before {
-    content: "\2605";
+    content: "\26A1";
     position: absolute;
     left: 0;
     color: #FFD700;

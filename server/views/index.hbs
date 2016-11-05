@@ -22,7 +22,9 @@
     {{#each notes}}
 		<span>{{dateFormat dueDate "D. MMM YYYY"}}</span>
 		<p>{{noteTitle}}</p>
-		<span>{{priority}}</span>
+		<span>{{#multiply priority}}
+			&#x26a1;
+		{{/multiply}}</span>
 		<input type="checkbox" {{#if done}}checked{{/if}} disabled> Finished
 		<textarea name="noteContent" disabled>{{description}}</textarea>
 		<input type="hidden" name="_id" value="{{_id}}">
