@@ -1,12 +1,14 @@
 var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
+hbs = require('hbs');
 
 var routes = require('./routes/notesRoutes');
 
 var app = express();
 
 // view engine setup
+hbs.registerHelper('dateFormat', require('handlebars-dateformat'));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 

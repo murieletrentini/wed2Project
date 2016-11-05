@@ -20,7 +20,7 @@
 
 <form id="noteContainer" action="/editNote" method="post">
     {{#each notes}}
-		<span>{{dueDate}}</span>
+		<span>{{dateFormat dueDate "D. MMM YYYY"}}</span>
 		<p>{{noteTitle}}</p>
 		<span>{{priority}}</span>
 		<input type="checkbox" {{#if done}}checked{{/if}} disabled> Finished

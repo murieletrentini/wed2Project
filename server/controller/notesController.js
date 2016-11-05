@@ -17,7 +17,7 @@ module.exports.saveNote = function (req, res, data) {
 	var dueDate = new Date(req.body.dueDate);
 	var done = req.body.doneCheck == 'on';
 	if (dueDate == 'Invalid Date') {
-		dueDate = Date()
+		dueDate = new Date();
 	}
 	store.add(title, description, priority, dueDate, done, function (error, note) {
 		if (error) {
