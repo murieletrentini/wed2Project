@@ -1,8 +1,9 @@
 var store = require("../services/notesStore.js");
 
 module.exports.showIndex = function (req, res) {
-	//TODO: bisherige notes anzeigen --> cookies?
-	res.render("index");
+	store.getAll(function (err, notes) {
+		res.render("index", {notes: notes});
+	});
 };
 
 module.exports.addNewNote = function (req, res) {
@@ -12,7 +13,7 @@ module.exports.addNewNote = function (req, res) {
 module.exports.saveNote = function (req, res, data) {
 	var title = String(req.body.noteTitle || "title");
 	var description = String(req.body.noteDescription || "description");
-	var priority = Number(req.body.star || 1);
+	var priority = Number(req.body.priority || 1);
 	var dueDate = new Date(req.body.dueDate);
 	var done = req.body.doneCheck == 'on';
 	if (dueDate == 'Invalid Date') {
