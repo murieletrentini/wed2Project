@@ -59,6 +59,11 @@ fieldset{
     align-items: center;
     font-weight: bold;
 }
+@media (max-width:50em){
+    #newNote > label{
+        display:block;
+    }
+}
 .buttonSection{
     display:flex;
     flex-direction: row;
