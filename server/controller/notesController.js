@@ -7,10 +7,14 @@ module.exports.showIndex = function (req, res) {
 };
 
 module.exports.addNewNote = function (req, res) {
-	res.render("addNewNote");
+	var note = {};
+	note.noteMode = "New";
+	res.render("addNewNote", {note: note});
 };
 
 module.exports.saveNote = function (req, res, data) {
+	//TODO: Check if not existing (Edited and newly created notes land here)
+
 	var title = String(req.body.noteTitle || "title");
 	var description = String(req.body.noteDescription || "description");
 	var priority = Number(req.body.priority || 1);
@@ -31,12 +35,21 @@ module.exports.saveNote = function (req, res, data) {
 };
 
 module.exports.editNote = function (req, res, data) {
-	//TODO: implement edit functionality
+	console.log(data);
+	store.get(req.body._id, function(err, note){
+		if(err){
+			console.log(err);
+		}
+		note.noteMode = "Edit";
+		note.prioHelper = [4];
+
+
+		res.render("addNewNote", note);
+	});
 };
 
 module.exports.getNotes = function (req, res) {
 	store.get(req.params.id, function (err, notes) {
 		res.render("index", notes);
-		console.log()
 	});
 };

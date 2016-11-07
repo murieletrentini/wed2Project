@@ -1,36 +1,37 @@
-<div class="content">
+<div class="content" xmlns="http://www.w3.org/1999/html">
 <header>
-    <h1>New Note</h1>
+    <h1>{{noteMode}} Note</h1>
 </header>
 <form action='/' method='post' id="newNote">
 	<label>Title
-		<input type="text" name="noteTitle">
+		<input type="text" name="noteTitle" value="{{noteTitle}}">
 	</label>
 	<label>Description
-		<textarea name="noteDescription"></textarea>
+		<textarea name="noteDescription">{{description}}</textarea>
 	</label>
 	<label>Priority
 		<div class="rating">
-			<input id="star5" name="priority" type="radio" value="5" class="radio-btn hide" required/>
+            <!--TODO: Show rating in edit mode-->
+            <input id="star5" name="priority" type="radio" {{#larger_equal_than priority 5}}checked{{/larger_equal_than}} value="5" class="radio-btn hide" required/>
 			<label for="star5" >&#x26a1;</label>
-			<input id="star4" name="priority" type="radio" value="4" class="radio-btn hide" />
+            <input id="star4" name="priority" type="radio" {{#larger_equal_than priority 4}}checked{{/larger_equal_than}} value="4" class="radio-btn hide" />
 			<label for="star4" >&#x26a1;</label>
-			<input id="star3" name="priority" type="radio" value="3" class="radio-btn hide" />
+			<input id="star3" name="priority" type="radio" {{#larger_equal_than priority 3}}checked{{/larger_equal_than}} value="3" class="radio-btn hide" />
 			<label for="star3" >&#x26a1;</label>
-			<input id="star2" name="priority" type="radio" value="2" class="radio-btn hide" />
+			<input id="star2" name="priority" type="radio" {{#larger_equal_than priority 2}}checked{{/larger_equal_than}} value="2" class="radio-btn hide" />
 			<label for="star2" >&#x26a1;</label>
-			<input id="star1" name="priority" type="radio" value="1" class="radio-btn hide" />
+			<input id="star1" name="priority" type="radio" {{#larger_equal_than priority 1}}checked{{/larger_equal_than}} value="1" class="radio-btn hide" />
 			<label for="star1" >&#x26a1;</label>
-			<div class="clear"></div>
+            <div class="clear"></div>
 		</div>
 	</label>
 	<label>To do until
-		<input type="date" name="dueDate">
+		<input type="date" name="dueDate" value="{{dateFormat dueDate "YYYY-MM-DD"}}">
 	</label>
 
     <span id="doneCheckbox">
     <label>
-        <input type="checkbox" name="doneCheck" id="doneCheck">Done
+        <input type="checkbox" name="doneCheck" id="doneCheck" {{#if done}}checked{{/if}}>Done
     </label>
     </span>
     <span class="buttonSection">

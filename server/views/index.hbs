@@ -27,8 +27,7 @@
 		{{/multiply}}</span>
 		<input type="checkbox" {{#if done}}checked{{/if}} disabled> Finished
 		<textarea name="noteContent" disabled>{{description}}</textarea>
-		<input type="hidden" name="_id" value="{{_id}}">
-		<button type="submit">edit</button>
+		<button type="submit" value="{{_id}}" name="_id">Edit</button>
     {{/each}}
 </form>
 </div>
