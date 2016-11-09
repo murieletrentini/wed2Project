@@ -3,6 +3,7 @@
     <h1>{{noteMode}} Note</h1>
 </header>
 <form action='/' method='post' id="newNote">
+	<input type="hidden" name="id" value="{{_id}}">
 	<label>Title
 		<input type="text" name="noteTitle" value="{{noteTitle}}">
 	</label>

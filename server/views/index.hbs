@@ -21,9 +21,9 @@
 		</fieldset>
 	</form>
 
-	<form id="noteContainer" action="/editNote" method="post">
+	<div id="noteContainer">
 		{{#each notes}}
-			<div class="finishedNote">
+				<form class="finishedNote" action="/editNote" method="post">
 				<div class="noteTitleRow">
 					<span>{{dateFormat dueDate "D. MMM YYYY"}}</span>
 					<p>{{noteTitle}}</p>
@@ -38,8 +38,8 @@
 					<input type="hidden" name="_id" value="{{_id}}">
 					<button type="submit" class="editNote">edit</button>
 				</div>
-			</div>
+			</form>
 		{{/each}}
-	</form>
+	</div>
 </div>
 
