@@ -20,6 +20,15 @@ function publicAddNote(noteTitle, description, priority, dueDate, done, callback
 	});
 }
 
+function publicUpdate(noteTitle, description, priority, dueDate, done, id,callback) {
+	var note = new Note(noteTitle, description, priority, dueDate, done);
+	db.update({_id: id}, note ,function (err, doc) {
+		if (callback) {
+			callback(err, doc);
+		}
+	});
+}
+
 function publicFinished(id, callback) {
 	db.update({_id: id}, {$set: {"done": "true"}}, {}, function (err, doc) {
 		publicGet(id, callback);
@@ -39,4 +48,5 @@ function publicGetAll(callback) {
 }
 
 
-module.exports = {add: publicAddNote, finish: publicFinished, get: publicGet, getAll: publicGetAll};
+
+module.exports = {add: publicAddNote, finish: publicFinished, get: publicGet, getAll: publicGetAll, update: publicUpdate};

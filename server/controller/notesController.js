@@ -14,7 +14,7 @@ module.exports.addNewNote = function (req, res) {
 
 module.exports.saveNote = function (req, res, data) {
 	//TODO: Check if not existing (Edited and newly created notes land here)
-
+	var id = String(req.body.id || "");
 	var title = String(req.body.noteTitle || "title");
 	var description = String(req.body.noteDescription || "description");
 	var priority = Number(req.body.priority || 1);
@@ -23,15 +23,28 @@ module.exports.saveNote = function (req, res, data) {
 	if (dueDate == 'Invalid Date') {
 		dueDate = new Date();
 	}
-	store.add(title, description, priority, dueDate, done, function (error, note) {
-		if (error) {
-			console.log(error);
-		}
-		store.getAll(function (err, notes) {
-			res.render("index", {notes: notes});
-		});
+	if (!id){
+		store.add(title, description, priority, dueDate, done, function (error, note) {
+			if (error) {
+				console.log(error);
+			}
+			store.getAll(function (err, notes) {
+				res.render("index", {notes: notes});
+			});
 
-	});
+		});
+	} else {
+		store.update(title, description, priority, dueDate, done,id, function (error, note) {
+			if (error) {
+				console.log(error);
+			}
+			store.getAll(function (err, notes) {
+				res.render("index", {notes: notes});
+			});
+
+		});
+	}
+
 };
 
 module.exports.editNote = function (req, res, data) {
