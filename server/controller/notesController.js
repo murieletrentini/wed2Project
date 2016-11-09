@@ -49,7 +49,27 @@ module.exports.editNote = function (req, res, data) {
 };
 
 module.exports.getNotes = function (req, res) {
-	store.get(req.params.id, function (err, notes) {
-		res.render("index", notes);
+	store.getAll(function (err, notes) {
+		if(err){
+			console.log(err);
+		}
+		switch(req.query.submit){
+			case 'dateDue':
+				notes.sort(function(noteA, noteB){
+					return noteA.dueDate < noteB.dueDate;
+				});
+				break;
+			case 'dateCreated':
+				notes.sort(function(noteA, noteB){
+					return noteA.createdDate < noteB.createdDate;
+				});
+				break;
+			case 'priority':
+				notes.sort(function(noteA, noteB){
+					return noteA.priority<noteB.priority;
+				});
+				break;
+		}
+		res.render("index", {notes: notes});
 	});
 };

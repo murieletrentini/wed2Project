@@ -6,6 +6,7 @@ function Note(noteTitle, description, priority, dueDate, done) {
 	this.description = description;
 	this.priority = priority;
 	this.dueDate = dueDate;
+	this.createdDate = new Date().toLocaleString();
 	this.done = done;
 }
 
@@ -31,7 +32,7 @@ function publicGet(id, callback) {
 	});
 }
 
-function  publicGetAll(callback) {
+function publicGetAll(callback) {
 	db.find({}, function (err, docs) {
 		callback(err, docs);
 	});
