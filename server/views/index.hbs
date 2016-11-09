@@ -21,20 +21,6 @@
 		</fieldset>
 	</form>
 
-<<<<<<< HEAD
-<form id="noteContainer" action="/editNote" method="post">
-    {{#each notes}}
-		<span>{{dateFormat dueDate "D. MMM YYYY"}}</span>
-		<p>{{noteTitle}}</p>
-		<span>{{#multiply priority}}
-			&#x26a1;
-		{{/multiply}}</span>
-		<input type="checkbox" {{#if done}}checked{{/if}} disabled> Finished
-		<textarea name="noteContent" disabled>{{description}}</textarea>
-		<button type="submit" value="{{_id}}" name="_id">Edit</button>
-    {{/each}}
-</form>
-=======
 	<form id="noteContainer" action="/editNote" method="post">
 		{{#each notes}}
 			<div class="finishedNote">
@@ -55,6 +41,5 @@
 			</div>
 		{{/each}}
 	</form>
->>>>>>> aaf23ed3faa636b22a75d553922206485d4359a9
 </div>
 

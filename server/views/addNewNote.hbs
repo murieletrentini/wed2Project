@@ -1,4 +1,4 @@
-<div class="content" xmlns="http://www.w3.org/1999/html">
+<div class="content">
 <header>
     <h1>{{noteMode}} Note</h1>
 </header>
@@ -12,15 +12,15 @@
 	<label>Priority
 		<div class="rating">
             <!--TODO: Show rating in edit mode-->
-            <input id="star5" name="priority" type="radio" {{#larger_equal_than priority 5}}checked{{/larger_equal_than}} value="5" class="radio-btn hide" required/>
+            <input id="star5" name="priority" type="radio" {{#if_equal priority 5}}checked{{/if_equal}} value="5" class="radio-btn hide" required/>
 			<label for="star5" >&#x26a1;</label>
-            <input id="star4" name="priority" type="radio" {{#larger_equal_than priority 4}}checked{{/larger_equal_than}} value="4" class="radio-btn hide" />
+            <input id="star4" name="priority" type="radio" {{#if_equal priority 4}}checked{{/if_equal}} value="4" class="radio-btn hide" />
 			<label for="star4" >&#x26a1;</label>
-			<input id="star3" name="priority" type="radio" {{#larger_equal_than priority 3}}checked{{/larger_equal_than}} value="3" class="radio-btn hide" />
+			<input id="star3" name="priority" type="radio" {{#if_equal priority 3}}checked{{/if_equal}} value="3" class="radio-btn hide" />
 			<label for="star3" >&#x26a1;</label>
-			<input id="star2" name="priority" type="radio" {{#larger_equal_than priority 2}}checked{{/larger_equal_than}} value="2" class="radio-btn hide" />
+			<input id="star2" name="priority" type="radio" {{#if_equal priority 2}}checked{{/if_equal}} value="2" class="radio-btn hide" />
 			<label for="star2" >&#x26a1;</label>
-			<input id="star1" name="priority" type="radio" {{#larger_equal_than priority 1}}checked{{/larger_equal_than}} value="1" class="radio-btn hide" />
+			<input id="star1" name="priority" type="radio" {{#if_equal priority 1}}checked{{/if_equal}} value="1" class="radio-btn hide" />
 			<label for="star1" >&#x26a1;</label>
             <div class="clear"></div>
 		</div>

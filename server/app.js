@@ -10,7 +10,8 @@ var app = express();
 // view engine setup
 hbs.registerHelper('dateFormat', require('handlebars-dateformat'));
 hbs.registerHelper('multiply', require('./helpers/multiply'));
-hbs.registerHelper('larger_equal_than', require('./helpers/conditionals'));
+//hbs.registerHelper('larger_equal_than', require('./helpers/conditionals'));
+hbs.registerHelper('if_equal', require('./helpers/conditionals'));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
