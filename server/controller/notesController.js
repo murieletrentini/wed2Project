@@ -2,7 +2,13 @@ var store = require("../services/notesStore.js");
 
 module.exports.showIndex = function (req, res) {
 	store.getAll(function (err, notes) {
-		res.render("index", {notes: notes});
+		var cookie = req.cookies.sortOrder;
+		if (cookie === undefined) {
+			res.render("index", {notes: notes});
+		} else {
+			res.redirect('/getNotes?submit='+cookie);
+		}
+
 	});
 };
 
@@ -13,7 +19,6 @@ module.exports.addNewNote = function (req, res) {
 };
 
 module.exports.saveNote = function (req, res, data) {
-	//TODO: Check if not existing (Edited and newly created notes land here)
 	var id = String(req.body.id || "");
 	var title = String(req.body.noteTitle || "title");
 	var description = String(req.body.noteDescription || "description");
@@ -28,9 +33,7 @@ module.exports.saveNote = function (req, res, data) {
 			if (error) {
 				console.log(error);
 			}
-			store.getAll(function (err, notes) {
-				res.render("index", {notes: notes});
-			});
+			res.redirect('/');
 
 		});
 	} else {
@@ -38,9 +41,7 @@ module.exports.saveNote = function (req, res, data) {
 			if (error) {
 				console.log(error);
 			}
-			store.getAll(function (err, notes) {
-				res.render("index", {notes: notes});
-			});
+			res.redirect('/');
 
 		});
 	}
@@ -82,6 +83,9 @@ module.exports.getNotes = function (req, res) {
 					return noteA.priority<noteB.priority;
 				});
 				break;
+		}
+		if (req.query.submit !== undefined){
+			res.cookie('sortOrder', req.query.submit);
 		}
 		res.render("index", {notes: notes});
 	});
