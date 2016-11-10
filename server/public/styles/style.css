@@ -7,7 +7,7 @@
 /**GENERAL**/
 .content {
     display: flex;
-    flex-direction: column;align-items: ;
+    flex-direction: column;
     margin: 1em 10%;
 }
 header{
@@ -38,6 +38,11 @@ button{
 button:hover{
     background-color: #F1F1F1;
     cursor: hand;
+}
+.pressed {
+    background: lightgray;
+    color: white;
+    box-shadow: 1px 1px 1px black inset;
 }
 
 /**SELECT**/

@@ -87,6 +87,6 @@ module.exports.getNotes = function (req, res) {
 		if (req.query.submit !== undefined){
 			res.cookie('sortOrder', req.query.submit);
 		}
-		res.render("index", {notes: notes});
+		res.render("index", {notes: notes, sortOrder: req.query.submit});
 	});
 };

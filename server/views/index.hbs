@@ -15,9 +15,9 @@
 	<form action="/getNotes" method="get" class="noteListBottom">
 		<fieldset>
 			<legend>Sort by</legend>
-			<button type="submit" name="submit" value="dateDue">Date Due</button>
-			<button type="submit" name="submit" value="dateCreated">Date Created</button>
-			<button type="submit" name="submit" value="priority">Priority</button>
+			<button {{#if_equal sortOrder "dateDue"}}class="pressed"{{/if_equal}} type="submit" name="submit" value="dateDue">Date Due</button>
+			<button {{#if_equal sortOrder "dateCreated"}}class="pressed"{{/if_equal}} type="submit" name="submit" value="dateCreated">Date Created</button>
+			<button {{#if_equal sortOrder "priority"}}class="pressed"{{/if_equal}} type="submit" name="submit" value="priority">Priority</button>
 		</fieldset>
 	</form>
 
