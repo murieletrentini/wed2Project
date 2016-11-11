@@ -1,12 +1,13 @@
 var store = require("../services/notesStore.js");
+var styleSwitcher = false;
 
 module.exports.showIndex = function (req, res) {
 	store.getAll(function (err, notes) {
 		var cookie = req.cookies.sortOrder;
 		if (cookie === undefined) {
-			res.render("index", {notes: notes});
+			res.render("index", {notes: notes,  styleSwitcher: styleSwitcher});
 		} else {
-			res.redirect('/getNotes?submit='+cookie);
+			res.redirect('/getNotes?submit=' + cookie);
 		}
 
 	});
@@ -18,7 +19,7 @@ module.exports.addNewNote = function (req, res) {
 	res.render("addNewNote", {note: note});
 };
 
-module.exports.saveNote = function (req, res, data) {
+module.exports.saveNote = function (req, res) {
 	var id = String(req.body.id || "");
 	var title = String(req.body.noteTitle || "title");
 	var description = String(req.body.noteDescription || "description");
@@ -28,7 +29,7 @@ module.exports.saveNote = function (req, res, data) {
 	if (dueDate == 'Invalid Date') {
 		dueDate = new Date();
 	}
-	if (!id){
+	if (!id) {
 		store.add(title, description, priority, dueDate, done, function (error, note) {
 			if (error) {
 				console.log(error);
@@ -37,7 +38,7 @@ module.exports.saveNote = function (req, res, data) {
 
 		});
 	} else {
-		store.update(title, description, priority, dueDate, done,id, function (error, note) {
+		store.update(title, description, priority, dueDate, done, id, function (error, note) {
 			if (error) {
 				console.log(error);
 			}
@@ -48,15 +49,13 @@ module.exports.saveNote = function (req, res, data) {
 
 };
 
-module.exports.editNote = function (req, res, data) {
-	console.log(data);
-	store.get(req.body._id, function(err, note){
-		if(err){
+module.exports.editNote = function (req, res) {
+	store.get(req.body._id, function (err, note) {
+		if (err) {
 			console.log(err);
 		}
 		note.noteMode = "Edit";
 		note.prioHelper = [4];
-
 
 		res.render("addNewNote", note);
 	});
@@ -64,29 +63,34 @@ module.exports.editNote = function (req, res, data) {
 
 module.exports.getNotes = function (req, res) {
 	store.getAll(function (err, notes) {
-		if(err){
+		if (err) {
 			console.log(err);
 		}
-		switch(req.query.submit){
+		switch (req.query.submit) {
 			case 'dateDue':
-				notes.sort(function(noteA, noteB){
+				notes.sort(function (noteA, noteB) {
 					return noteA.dueDate < noteB.dueDate;
 				});
 				break;
 			case 'dateCreated':
-				notes.sort(function(noteA, noteB){
+				notes.sort(function (noteA, noteB) {
 					return noteA.createdDate < noteB.createdDate;
 				});
 				break;
 			case 'priority':
-				notes.sort(function(noteA, noteB){
-					return noteA.priority<noteB.priority;
+				notes.sort(function (noteA, noteB) {
+					return noteA.priority < noteB.priority;
 				});
 				break;
 		}
-		if (req.query.submit !== undefined){
+		if (req.query.submit !== undefined) {
 			res.cookie('sortOrder', req.query.submit);
 		}
-		res.render("index", {notes: notes, sortOrder: req.query.submit});
+		res.render("index", {notes: notes, sortOrder: req.query.submit, styleSwitcher: styleSwitcher});
 	});
+};
+
+module.exports.changeStyle = function (req, res) {
+	styleSwitcher = !styleSwitcher;
+	res.redirect('/');
 };

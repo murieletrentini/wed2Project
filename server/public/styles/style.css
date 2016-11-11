@@ -41,9 +41,10 @@ button:hover{
 }
 .pressed {
     background: lightgray;
-    color: white;
+    color: black;
     box-shadow: 1px 1px 1px black inset;
 }
+
 
 /**SELECT**/
 #styleSwitcher{

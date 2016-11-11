@@ -30,7 +30,7 @@ function publicUpdate(noteTitle, description, priority, dueDate, done, id,callba
 }
 
 function publicFinished(id, callback) {
-	db.update({_id: id}, {$set: {"done": "true"}}, {}, function (err, doc) {
+	db.update({_id: id}, {$set: {"done": true}}, {}, function (err, doc) {
 		publicGet(id, callback);
 	});
 }

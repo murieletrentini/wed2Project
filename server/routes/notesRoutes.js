@@ -6,7 +6,7 @@ router.get("/", notes.showIndex);
 router.post("/", notes.saveNote);
 router.post("/addNewNote", notes.addNewNote);
 router.get("/getNotes", notes.getNotes);
-
 router.post("/editNote", notes.editNote);
+router.get("/changeStyle", notes.changeStyle);
 
 module.exports = router;

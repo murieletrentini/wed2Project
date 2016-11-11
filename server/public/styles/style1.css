@@ -2,3 +2,12 @@ button {
     background: dodgerblue;
     color: white;
 }
+
+button:hover {
+    background: #80bfff;
+}
+
+.pressed {
+    background: #0066cc;
+    color: white;
+}

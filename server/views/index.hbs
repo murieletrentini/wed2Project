@@ -2,28 +2,35 @@
 	<header>
 		<h1>Note List</h1>
 	</header>
-	<form action="/addNewNote" method="post" class="noteListTop">
-		<button type="submit">Create new Note</button>
-	</form>
-	<select id="styleSwitcher">
-		<option>Style 1</option>
-		<option>Style 2</option>
-	</select>
-	<form action="/" method="get"><input type="hidden" method="_show_finished">
-		<button type="submit" method="get">Show Finished</button>
-	</form>
+	<div class="noteListTop">
+		<form action="/addNewNote" method="post">
+			<button type="submit">Create new Note</button>
+		</form>
+		<form action="/changeStyle" method="get">
+			<button type="submit" value="styleSwitcher">Switch style!</button>
+		</form>
+		<form action="/" method="get"><input type="hidden" method="_show_finished">
+			<button type="submit" method="get">Show Finished</button>
+		</form>
+	</div>
 	<form action="/getNotes" method="get" class="noteListBottom">
 		<fieldset>
 			<legend>Sort by</legend>
-			<button {{#if_equal sortOrder "dateDue"}}class="pressed"{{/if_equal}} type="submit" name="submit" value="dateDue">Date Due</button>
-			<button {{#if_equal sortOrder "dateCreated"}}class="pressed"{{/if_equal}} type="submit" name="submit" value="dateCreated">Date Created</button>
-			<button {{#if_equal sortOrder "priority"}}class="pressed"{{/if_equal}} type="submit" name="submit" value="priority">Priority</button>
+			<button {{#if_equal sortOrder "dateDue"}}class="pressed"{{/if_equal}} type="submit" name="submit"
+					value="dateDue">Date Due
+			</button>
+			<button {{#if_equal sortOrder "dateCreated"}}class="pressed"{{/if_equal}} type="submit" name="submit"
+					value="dateCreated">Date Created
+			</button>
+			<button {{#if_equal sortOrder "priority"}}class="pressed"{{/if_equal}} type="submit" name="submit"
+					value="priority">Priority
+			</button>
 		</fieldset>
 	</form>
 
 	<div id="noteContainer">
 		{{#each notes}}
-				<form class="finishedNote" action="/editNote" method="post">
+			<form class="finishedNote" action="/editNote" method="post">
 				<div class="noteTitleRow">
 					<span>{{dateFormat dueDate "D. MMM YYYY"}}</span>
 					<p>{{noteTitle}}</p>
