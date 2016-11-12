@@ -1,37 +1,37 @@
 <div class="content">
 <header>
-    <h1>{{noteMode}} Note</h1>
+    <h1>{{title}}</h1>
 </header>
 <form action='/' method='post' id="newNote">
-	<input type="hidden" name="id" value="{{_id}}">
+	<input type="hidden" name="id" value="{{note._id}}">
 	<label>Title
-		<input type="text" name="noteTitle" value="{{noteTitle}}">
+		<input type="text" name="noteTitle" value="{{note.noteTitle}}">
 	</label>
 	<label>Description
-		<textarea name="noteDescription">{{description}}</textarea>
+		<textarea name="noteDescription">{{note.description}}</textarea>
 	</label>
 	<label>Priority
 		<div class="rating">
-            <input id="star5" name="priority" type="radio" {{#if_equal priority 5}}checked{{/if_equal}} value="5" class="radio-btn hide" required/>
+            <input id="star5" name="priority" type="radio" {{#if_equal note.priority 5}}checked{{/if_equal}} value="5" class="radio-btn hide" required/>
 			<label for="star5" >&#x26a1;</label>
-            <input id="star4" name="priority" type="radio" {{#if_equal priority 4}}checked{{/if_equal}} value="4" class="radio-btn hide" />
+            <input id="star4" name="priority" type="radio" {{#if_equal note.priority 4}}checked{{/if_equal}} value="4" class="radio-btn hide" />
 			<label for="star4" >&#x26a1;</label>
-			<input id="star3" name="priority" type="radio" {{#if_equal priority 3}}checked{{/if_equal}} value="3" class="radio-btn hide" />
+			<input id="star3" name="priority" type="radio" {{#if_equal note.priority 3}}checked{{/if_equal}} value="3" class="radio-btn hide" />
 			<label for="star3" >&#x26a1;</label>
-			<input id="star2" name="priority" type="radio" {{#if_equal priority 2}}checked{{/if_equal}} value="2" class="radio-btn hide" />
+			<input id="star2" name="priority" type="radio" {{#if_equal note.priority 2}}checked{{/if_equal}} value="2" class="radio-btn hide" />
 			<label for="star2" >&#x26a1;</label>
-			<input id="star1" name="priority" type="radio" {{#if_equal priority 1}}checked{{/if_equal}} value="1" class="radio-btn hide" />
+			<input id="star1" name="priority" type="radio" {{#if_equal note.priority 1}}checked{{/if_equal}} value="1" class="radio-btn hide" />
 			<label for="star1" >&#x26a1;</label>
             <div class="clear"></div>
 		</div>
 	</label>
 	<label>To do until
-		<input type="date" name="dueDate" value="{{dateFormat dueDate "YYYY-MM-DD"}}">
+		<input type="date" name="dueDate" value="{{dateFormat note.dueDate "YYYY-MM-DD"}}">
 	</label>
 
     <span id="doneCheckbox">
     <label>
-        <input type="checkbox" name="doneCheck" id="doneCheck" {{#if done}}checked{{/if}}>Done
+        <input type="checkbox" name="doneCheck" id="doneCheck" {{#if note.done}}checked{{/if}}>Done
     </label>
     </span>
     <span class="buttonSection">

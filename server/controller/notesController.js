@@ -14,9 +14,21 @@ module.exports.showIndex = function (req, res) {
 };
 
 module.exports.addNewNote = function (req, res) {
-	var note = {};
-	note.noteMode = "New";
-	res.render("addNewNote", {note: note});
+	var title;
+	if (req.body._id){
+		title = "Edit Note";
+		store.get(req.body._id, function (err, note) {
+			if (err) {
+				console.log(err);
+			}
+			res.render("addNewNote", {title: title, note: note});
+		});
+	} else {
+		title = "New Note";
+		var note = {};
+		res.render("addNewNote", {title: title, note: note});
+	}
+
 };
 
 module.exports.saveNote = function (req, res) {
@@ -47,18 +59,6 @@ module.exports.saveNote = function (req, res) {
 		});
 	}
 
-};
-
-module.exports.editNote = function (req, res) {
-	store.get(req.body._id, function (err, note) {
-		if (err) {
-			console.log(err);
-		}
-		note.noteMode = "Edit";
-		note.prioHelper = [4];
-
-		res.render("addNewNote", note);
-	});
 };
 
 module.exports.getNotes = function (req, res) {
