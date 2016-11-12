@@ -45,21 +45,9 @@ module.exports.saveNote = function (req, res) {
 		dueDate = new Date();
 	}
 	if (!id) {
-		store.add(title, description, priority, dueDate, done, function (error, note) {
-			if (error) {
-				res.render("error", {error: error});
-			}
-			res.redirect('/');
-
-		});
+		store.add(title, description, priority, dueDate, done, callbackShowIndex(res));
 	} else {
-		store.update(title, description, priority, dueDate, done, id, function (error, note) {
-			if (error) {
-				res.render("error", {error: error});
-			}
-			res.redirect('/');
-
-		});
+		store.update(title, description, priority, dueDate, done, id, callbackShowIndex(res));
 	}
 
 };
@@ -92,3 +80,10 @@ module.exports.getNotes = function (req, res) {
 	});
 };
 
+
+var callbackShowIndex= function(res, error){
+	if (error) {
+		res.render("error", {error: error});
+	}
+	res.redirect('/');
+};
