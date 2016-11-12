@@ -1,13 +1,16 @@
 var store = require("../services/notesStore.js");
-var styleSwitcher = false;
+
 
 module.exports.showIndex = function (req, res) {
-	store.getAll(function (err, notes) {
-		var cookie = req.cookies.sortOrder;
-		if (cookie === undefined) {
-			res.render("index", {notes: notes,  styleSwitcher: styleSwitcher});
+	store.getAll(function (error, notes) {
+		if (error) {
+			res.render("error", {error: error});
+		}
+		var sortOrder = req.cookies.sortOrder;
+		if (sortOrder === undefined) {
+			res.render("index", {notes: notes,  styleSwitcher: req.cookies.styleSwitcher});
 		} else {
-			res.redirect('/getNotes?submit=' + cookie);
+			res.redirect('/getNotes?submit=' + sortOrder);
 		}
 
 	});
@@ -17,9 +20,9 @@ module.exports.addNewNote = function (req, res) {
 	var title;
 	if (req.body._id){
 		title = "Edit Note";
-		store.get(req.body._id, function (err, note) {
-			if (err) {
-				console.log(err);
+		store.get(req.body._id, function (error, note) {
+			if (error) {
+				res.render("error", {error: error});
 			}
 			res.render("addNewNote", {title: title, note: note});
 		});
@@ -44,7 +47,7 @@ module.exports.saveNote = function (req, res) {
 	if (!id) {
 		store.add(title, description, priority, dueDate, done, function (error, note) {
 			if (error) {
-				console.log(error);
+				res.render("error", {error: error});
 			}
 			res.redirect('/');
 
@@ -52,7 +55,7 @@ module.exports.saveNote = function (req, res) {
 	} else {
 		store.update(title, description, priority, dueDate, done, id, function (error, note) {
 			if (error) {
-				console.log(error);
+				res.render("error", {error: error});
 			}
 			res.redirect('/');
 
@@ -64,9 +67,10 @@ module.exports.saveNote = function (req, res) {
 module.exports.getNotes = function (req, res) {
 	store.getAll(function (err, notes) {
 		if (err) {
-			console.log(err);
+			res.render("error", {error: error});
 		}
-		switch (req.query.submit) {
+		var sortOrder = req.query.submit;
+		switch (sortOrder) {
 			case 'dateDue':
 				notes.sort(function (noteA, noteB) {
 					return noteA.dueDate < noteB.dueDate;
@@ -83,14 +87,8 @@ module.exports.getNotes = function (req, res) {
 				});
 				break;
 		}
-		if (req.query.submit !== undefined) {
-			res.cookie('sortOrder', req.query.submit);
-		}
-		res.render("index", {notes: notes, sortOrder: req.query.submit, styleSwitcher: styleSwitcher});
+		res.cookie('sortOrder', sortOrder);
+		res.render("index", {notes: notes, sortOrder: sortOrder, styleSwitcher: req.cookies.styleSwitcher});
 	});
 };
 
-module.exports.changeStyle = function (req, res) {
-	styleSwitcher = !styleSwitcher;
-	res.redirect('/');
-};

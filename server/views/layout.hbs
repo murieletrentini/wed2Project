@@ -6,7 +6,7 @@
 	<meta name="author" content="Oli Dias & Muriele Trentini">
 	<meta name="organisation" content="HSR Hochschule Rapperswil">
 	<link rel="stylesheet" href="/styles/style.css">
-	{{#if styleSwitcher}}<link rel="stylesheet" href="/styles/style1.css">{{/if}}
+	{{#if_equal styleSwitcher "true"}}<link rel="stylesheet" href="/styles/style1.css">{{/if_equal}}
 </head>
 <body>
 {{{body}}}
