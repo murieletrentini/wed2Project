@@ -3,6 +3,7 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 hbs = require('hbs');
+var config = require('./util/configuration.js');
 
 var routes = require('./routes/notesRoutes');
 
@@ -22,8 +23,13 @@ app.set('view engine', 'hbs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
+app.use(function (req, res, next) {
+	config.config.styleSwitcher = req.cookies.styleSwitcher;
+	config.config.sortOrder = req.cookies.sortOrder;
+	config.config.order = req.cookies.order || 1;
+	next();
+});
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.use('/', routes);
 
 // catch 404 and forward to error handler

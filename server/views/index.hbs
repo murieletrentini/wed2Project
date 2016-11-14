@@ -7,7 +7,7 @@
 			<button type="submit">Create new Note</button>
 		</form>
 		<form action="/changeStyle" method="get">
-			<button type="submit" value="styleSwitcher">Switch style!</button>
+			<button {{#if_equal config.styleSwitcher "true"}}class="pressed"{{/if_equal}} type="submit" value="styleSwitcher">Switch style!</button>
 		</form>
 		<form action="/showFinished" method="get">
 			<button type="submit" method="get">Show {{#if_equal showFinishedActive true}}All{{/if_equal}}{{#_if_not showFinishedActive}}Finished{{/_if_not}}</button>
@@ -16,13 +16,13 @@
 	<form action="/getNotes" method="get" class="noteListBottom">
 		<fieldset>
 			<legend>Sort by</legend>
-			<button {{#if_equal sortOrder "dateDue"}}class="pressed"{{/if_equal}} type="submit" name="submit"
+			<button {{#if_equal config.sortOrder "dateDue"}}class="pressed"{{/if_equal}} type="submit" name="submit"
 					value="dateDue">Date Due
 			</button>
-			<button {{#if_equal sortOrder "dateCreated"}}class="pressed"{{/if_equal}} type="submit" name="submit"
+			<button {{#if_equal config.sortOrder "dateCreated"}}class="pressed"{{/if_equal}} type="submit" name="submit"
 					value="dateCreated">Date Created
 			</button>
-			<button {{#if_equal sortOrder "priority"}}class="pressed"{{/if_equal}} type="submit" name="submit"
+			<button {{#if_equal config.sortOrder "priority"}}class="pressed"{{/if_equal}} type="submit" name="submit"
 					value="priority">Priority
 			</button>
 		</fieldset>

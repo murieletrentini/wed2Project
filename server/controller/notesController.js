@@ -1,18 +1,23 @@
 var store = require("../services/notesStore.js");
+var config = require("../util/configuration.js");
 
 
 module.exports.showIndex = function (req, res) {
-	if(req.cookies.showFinishedActive==='undefined')req.cookies.showFinishedActive = false;
+	if (req.cookies.showFinishedActive === 'undefined')req.cookies.showFinishedActive = false;
 	store.getAll(function (error, notes) {
 		if (error) {
 			res.render("error", {error: error});
 		}
-		if(notes.size===0){
+		if (notes.size === 0) {
 			notes.isEmpty = true;
 		}
 		var sortOrder = req.cookies.sortOrder;
 		if (sortOrder === undefined) {
-			res.render("index", {notes: notes,  styleSwitcher: req.cookies.styleSwitcher, showFinishedActive: req.cookies.showFinishedActive});
+			res.render("index", {
+				notes: notes,
+				config: config.config,
+				showFinishedActive: req.cookies.showFinishedActive
+			});
 		} else {
 			res.redirect('/getNotes?submit=' + sortOrder);
 		}
@@ -22,18 +27,18 @@ module.exports.showIndex = function (req, res) {
 
 module.exports.addNewNote = function (req, res) {
 	var title;
-	if (req.body._id){
+	if (req.body._id) {
 		title = "Edit Note";
 		store.get(req.body._id, function (error, note) {
 			if (error) {
 				res.render("error", {error: error});
 			}
-			res.render("addNewNote", {title: title, note: note, styleSwitcher: req.cookies.styleSwitcher});
+			res.render("addNewNote", {title: title, note: note, config: config.config});
 		});
 	} else {
 		title = "New Note";
 		var note = {};
-		res.render("addNewNote", {title: title, note: note, styleSwitcher: req.cookies.styleSwitcher});
+		res.render("addNewNote", {title: title, note: note, config: config.config});
 	}
 
 };
@@ -57,11 +62,18 @@ module.exports.saveNote = function (req, res) {
 };
 
 module.exports.getNotes = function (req, res) {
-	store.getAll(function (err, notes) {
-		if (err) {
+	var sortOrder = req.query.submit;
+	if (config.config.sortOrder == sortOrder) {
+		config.switchOrder();
+		res.cookie('order', config.config.order);
+	} else {
+		config.config.sortOrder = sortOrder;
+		res.cookie('sortOrder', sortOrder);
+	}
+	store.getAll(function (error, notes) {
+		if (error) {
 			res.render("error", {error: error});
 		}
-		var sortOrder = req.query.submit;
 		switch (sortOrder) {
 			case 'dateDue':
 				notes.sort(function (noteA, noteB) {
@@ -79,20 +91,22 @@ module.exports.getNotes = function (req, res) {
 				});
 				break;
 		}
-		res.cookie('sortOrder', sortOrder);
-		res.render("index", {notes: notes, sortOrder: sortOrder, styleSwitcher: req.cookies.styleSwitcher});
+		if (config.config.order == 1){
+			notes.reverse();
+		}
+		res.render("index", {notes: notes, config: config.config});
 	});
 };
 
-module.exports.showFinished = function(req, res){
+module.exports.showFinished = function (req, res) {
 	var showFinishedActive = req.cookies.showFinishedActive;
-	if(showFinishedActive==='undefined') showFinishedActive = 'false';
-	if(showFinishedActive === 'true'){
-		store.getAll(function(err, docs){
-			if(err){
+	if (showFinishedActive === 'undefined') showFinishedActive = 'false';
+	if (showFinishedActive === 'true') {
+		store.getAll(function (err, docs) {
+			if (err) {
 				res.render("error", {error: err});
 			}
-			if(typeof docs === 'undefined'){
+			if (typeof docs === 'undefined') {
 				docs.isEmpty = true;
 			}
 			res.render("index", {
@@ -102,12 +116,12 @@ module.exports.showFinished = function(req, res){
 				showFinishedActive: 'false'
 			})
 		})
-	}else {
+	} else {
 		store.getFinished(function (err, docs) {
 			if (err) {
 				res.render("error", {error: err});
 			}
-			if(docs.length === 0){
+			if (docs.length === 0) {
 				docs.isEmpty = true;
 			}
 			res.render("index", {
@@ -121,7 +135,7 @@ module.exports.showFinished = function(req, res){
 };
 
 
-var callbackShowIndex= function(res, error){
+var callbackShowIndex = function (res, error) {
 	if (error) {
 		res.render("error", {error: error});
 	}
