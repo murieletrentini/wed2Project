@@ -29,9 +29,15 @@ function publicUpdate(noteTitle, description, priority, dueDate, done, id,callba
 	});
 }
 
-function publicFinished(id, callback) {
+function publicSetFinished(id, callback) {
 	db.update({_id: id}, {$set: {"done": true}}, {}, function (err, doc) {
 		publicGet(id, callback);
+	});
+}
+
+function publicGetFinished(callback){
+	db.find({"done": true}, function(err, docs){
+		callback(err, docs);
 	});
 }
 
@@ -49,4 +55,4 @@ function publicGetAll(callback) {
 
 
 
-module.exports = {add: publicAddNote, finish: publicFinished, get: publicGet, getAll: publicGetAll, update: publicUpdate};
+module.exports = {add: publicAddNote, updateFinished: publicSetFinished, getFinished: publicGetFinished, get: publicGet, getAll: publicGetAll, update: publicUpdate};

@@ -8,6 +8,7 @@ router.post("/", notes.saveNote);
 router.post("/addNewNote", notes.addNewNote);
 router.get("/getNotes", notes.getNotes);
 router.post("/editNote", notes.addNewNote);
+router.get("/showFinished", notes.showFinished);
 router.get("/changeStyle", cookies.changeStyle);
 
 module.exports = router;

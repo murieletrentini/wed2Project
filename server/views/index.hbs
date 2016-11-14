@@ -9,7 +9,7 @@
 		<form action="/changeStyle" method="get">
 			<button type="submit" value="styleSwitcher">Switch style!</button>
 		</form>
-		<form action="/" method="get"><input type="hidden" method="_show_finished">
+		<form action="/showFinished" method="get"><input type="hidden" method="_show_finished">
 			<button type="submit" method="get">Show Finished</button>
 		</form>
 	</div>
@@ -43,7 +43,7 @@
 						<label for="isDone">Finished</label></div>
 					<textarea name="noteContent" disabled>{{description}}</textarea>
 					<input type="hidden" name="_id" value="{{_id}}">
-					<button type="submit" class="editNote">edit</button>
+					<button type="submit" class="editNote">Edit</button>
 				</div>
 			</form>
 		{{/each}}

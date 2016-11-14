@@ -80,6 +80,35 @@ module.exports.getNotes = function (req, res) {
 	});
 };
 
+module.exports.showFinished = function(req, res){
+	var showFinishedActive = req.cookies.showFinishedActive;
+	if(showFinishedActive){
+		store.getAll(function(err, docs){
+			if(err){
+				res.render("error", {error: err});
+			}
+			res.render("index", {
+				notes: docs,
+				sortOrder: req.cookies.sortOrder,
+				styleSwitcher: req.cookies.styleSwitcher,
+				showFinishedActive: !showFinishedActive
+			})
+		})
+	}else {
+		store.getFinished(function (err, docs) {
+			if (err) {
+				res.render("error", {error: err});
+			}
+			res.render("index", {
+				notes: docs,
+				sortOrder: req.cookies.sortOrder,
+				styleSwitcher: req.cookies.styleSwitcher,
+				showFinishedActive: !showFinishedActive
+			});
+		});
+	}
+};
+
 
 var callbackShowIndex= function(res, error){
 	if (error) {
