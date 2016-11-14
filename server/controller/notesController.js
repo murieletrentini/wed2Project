@@ -45,7 +45,7 @@ module.exports.addNewNote = function (req, res) {
 
 module.exports.saveNote = function (req, res) {
 	var id = String(req.body.id || "");
-	var title = String(req.body.noteTitle || "title");
+	var title = String(req.body.noteTitle);
 	var description = String(req.body.noteDescription || "description");
 	var priority = Number(req.body.priority || 1);
 	var dueDate = new Date(req.body.dueDate);

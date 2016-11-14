@@ -5,7 +5,7 @@
 <form action='/' method='post' id="newNote">
 	<input type="hidden" name="id" value="{{note._id}}">
 	<label>Title
-		<input type="text" name="noteTitle" value="{{note.noteTitle}}">
+		<input type="text" name="noteTitle" value="{{note.noteTitle}}" required>
 	</label>
 	<label>Description
 		<textarea name="noteDescription">{{note.description}}</textarea>
