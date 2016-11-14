@@ -11,7 +11,7 @@
 		<textarea name="noteDescription">{{note.description}}</textarea>
 	</label>
 	<label>Priority
-			<input type="range" min="1" max="5" step="1" value={{#if note.priority}}{{note.priority}}{{else}}"0"{{/if}}>
+			<input type="range" min="1" max="5" step="1" name="priority" value={{#if note.priority}}{{note.priority}}{{else}}"0"{{/if}}>
 	</label>
 	<label>To do until
 		<input type="date" name="dueDate" value="{{dateFormat note.dueDate "YYYY-MM-DD"}}">

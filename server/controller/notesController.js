@@ -11,7 +11,7 @@ module.exports.showIndex = function (req, res) {
 		if (notes.size === 0) {
 			notes.isEmpty = true;
 		}
-		var sortOrder = req.cookies.sortOrder;
+		var sortOrder = config.config.sortOrder;
 		if (sortOrder === undefined) {
 			res.render("index", {
 				notes: notes,

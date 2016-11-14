@@ -1,7 +1,5 @@
-{"noteTitle":"first note","description":"once edited","priority":1,"dueDate":{"$$date":1478908800000},"createdDate":"11/14/2016, 3:09:33 PM","done":false,"_id":"4m0o6HN2C3FPFIbj"}
-{"noteTitle":"hallo","description":"rer332123","priority":1,"dueDate":{"$$date":1479772800000},"createdDate":"11/14/2016, 3:00:09 PM","done":false,"_id":"UaKRrzzLJ8bKCTmg"}
-{"noteTitle":"dqwdqwdq","description":"ddddwqwq","priority":1,"dueDate":{"$$date":1479081600000},"createdDate":"11/14/2016, 3:09:26 PM","done":false,"_id":"aUBfFWVVWxOsy0dH"}
-{"noteTitle":"qweqwe","description":"wwewqeqe","priority":1,"dueDate":{"$$date":1479081600000},"createdDate":"11/14/2016, 3:08:03 PM","done":false,"_id":"eKoxVzMKHpvlguTq"}
-{"noteTitle":"1234","description":"123","priority":1,"dueDate":{"$$date":1478908800000},"createdDate":"11/14/2016, 3:13:57 PM","done":false,"_id":"lwYPSC5T0xoK3lXS"}
-{"noteTitle":"dqwdq","description":"weeeeee","priority":1,"dueDate":{"$$date":1479859200000},"createdDate":"11/14/2016, 3:13:50 PM","done":false,"_id":"yPIiPNSVwAxzADt2"}
-{"noteTitle":"123","description":"098765fvd,w","priority":1,"dueDate":{"$$date":1479081600000},"createdDate":"11/14/2016, 3:15:06 PM","done":false,"_id":"YywRIhzpx8ccj52C"}
+{"noteTitle":"second","description":"second","priority":1,"dueDate":{"$$date":1479340800000},"createdDate":"11/14/2016, 3:23:28 PM","done":false,"_id":"2kufF5Rwa2B66yZK"}
+{"noteTitle":"new","description":"new","priority":3,"dueDate":{"$$date":1479772800000},"createdDate":"11/14/2016, 3:25:42 PM","done":false,"_id":"FTQCRhA5T1OYxMRp"}
+{"noteTitle":"first","description":"first","priority":4,"dueDate":{"$$date":1479600000000},"createdDate":"11/14/2016, 3:24:33 PM","done":false,"_id":"MnmKAyHdcX6QjqZR"}
+{"noteTitle":"dqwqwdqdqw","description":"description","priority":1,"dueDate":{"$$date":1479081600000},"createdDate":"11/14/2016, 3:28:01 PM","done":false,"_id":"r8jwDURug4WAoKwM"}
+{"noteTitle":"third","description":"third","priority":2,"dueDate":{"$$date":1479168000000},"createdDate":"11/14/2016, 3:25:18 PM","done":false,"_id":"t7PiZloZ5wPyRLLn"}
