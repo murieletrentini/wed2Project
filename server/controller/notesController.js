@@ -2,13 +2,17 @@ var store = require("../services/notesStore.js");
 
 
 module.exports.showIndex = function (req, res) {
+	if(req.cookies.showFinishedActive==='undefined')req.cookies.showFinishedActive = false;
 	store.getAll(function (error, notes) {
 		if (error) {
 			res.render("error", {error: error});
 		}
+		if(notes.size===0){
+			notes.isEmpty = true;
+		}
 		var sortOrder = req.cookies.sortOrder;
 		if (sortOrder === undefined) {
-			res.render("index", {notes: notes,  styleSwitcher: req.cookies.styleSwitcher});
+			res.render("index", {notes: notes,  styleSwitcher: req.cookies.styleSwitcher, showFinishedActive: req.cookies.showFinishedActive});
 		} else {
 			res.redirect('/getNotes?submit=' + sortOrder);
 		}
@@ -24,12 +28,12 @@ module.exports.addNewNote = function (req, res) {
 			if (error) {
 				res.render("error", {error: error});
 			}
-			res.render("addNewNote", {title: title, note: note});
+			res.render("addNewNote", {title: title, note: note, styleSwitcher: req.cookies.styleSwitcher});
 		});
 	} else {
 		title = "New Note";
 		var note = {};
-		res.render("addNewNote", {title: title, note: note});
+		res.render("addNewNote", {title: title, note: note, styleSwitcher: req.cookies.styleSwitcher});
 	}
 
 };
@@ -82,16 +86,20 @@ module.exports.getNotes = function (req, res) {
 
 module.exports.showFinished = function(req, res){
 	var showFinishedActive = req.cookies.showFinishedActive;
-	if(showFinishedActive){
+	if(showFinishedActive==='undefined') showFinishedActive = 'false';
+	if(showFinishedActive === 'true'){
 		store.getAll(function(err, docs){
 			if(err){
 				res.render("error", {error: err});
+			}
+			if(typeof docs === 'undefined'){
+				docs.isEmpty = true;
 			}
 			res.render("index", {
 				notes: docs,
 				sortOrder: req.cookies.sortOrder,
 				styleSwitcher: req.cookies.styleSwitcher,
-				showFinishedActive: !showFinishedActive
+				showFinishedActive: 'false'
 			})
 		})
 	}else {
@@ -99,11 +107,14 @@ module.exports.showFinished = function(req, res){
 			if (err) {
 				res.render("error", {error: err});
 			}
+			if(docs.length === 0){
+				docs.isEmpty = true;
+			}
 			res.render("index", {
 				notes: docs,
 				sortOrder: req.cookies.sortOrder,
 				styleSwitcher: req.cookies.styleSwitcher,
-				showFinishedActive: !showFinishedActive
+				showFinishedActive: 'true'
 			});
 		});
 	}

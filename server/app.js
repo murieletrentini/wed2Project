@@ -12,6 +12,8 @@ var app = express();
 hbs.registerHelper('dateFormat', require('handlebars-dateformat'));
 hbs.registerHelper('multiply', require('./helpers/multiply'));
 hbs.registerHelper('if_equal', require('./helpers/conditionals'));
+hbs.registerHelper('_if', require('./helpers/conditionals'));
+hbs.registerHelper('_if_not', require('./helpers/conditionals'));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
