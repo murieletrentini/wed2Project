@@ -3,7 +3,6 @@ var config = require("../util/configuration.js");
 
 
 module.exports.showIndex = function (req, res) {
-	if (req.cookies.showFinishedActive === 'undefined')req.cookies.showFinishedActive = false;
 	store.getAll(function (error, notes) {
 		if (error) {
 			res.render("error", {error: error});
@@ -16,7 +15,7 @@ module.exports.showIndex = function (req, res) {
 			res.render("index", {
 				notes: notes,
 				config: config.config,
-				showFinishedActive: req.cookies.showFinishedActive
+				toggleFinishedActive: req.cookies.toggleFinishedActive
 			});
 		} else {
 			getSorted(sortOrder,res);
@@ -103,9 +102,7 @@ var getSorted = function (sortOrder, res) {
 };
 
 module.exports.showFinished = function (req, res) {
-	var showFinishedActive = req.cookies.showFinishedActive;
-	if (showFinishedActive === 'undefined') showFinishedActive = 'false';
-	if (showFinishedActive === 'true') {
+    if(config.config.showFinishedActive==1){
 		store.getAll(function (err, docs) {
 			if (err) {
 				res.render("error", {error: err});
@@ -116,9 +113,9 @@ module.exports.showFinished = function (req, res) {
 			res.render("index", {
 				notes: docs,
 				sortOrder: req.cookies.sortOrder,
-				styleSwitcher: req.cookies.styleSwitcher,
-				showFinishedActive: 'false'
-			})
+				styleSwitcher: req.cookies.styleSwitcher
+			});
+            config.toggleFinishedActive();
 		})
 	} else {
 		store.getFinished(function (err, docs) {
@@ -131,11 +128,11 @@ module.exports.showFinished = function (req, res) {
 			res.render("index", {
 				notes: docs,
 				sortOrder: req.cookies.sortOrder,
-				styleSwitcher: req.cookies.styleSwitcher,
-				showFinishedActive: 'true'
+				styleSwitcher: req.cookies.styleSwitcher
 			});
-		});
-	}
+            config.toggleFinishedActive();
+        });
+    }
 };
 
 

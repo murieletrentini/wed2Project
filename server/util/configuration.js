@@ -1,7 +1,8 @@
 module.exports.config = {
 	styleSwitcher: "",
 	sortOrder: "",
-	order: 1
+	order: 1,
+	showFinishedActive: 0
 };
 
 module.exports.changeStyle = function (req, res) {
@@ -13,4 +14,8 @@ module.exports.changeStyle = function (req, res) {
 
 module.exports.switchOrder = function () {
 	this.config.order = this.config.order == 1 ? 0 : 1;
+};
+
+module.exports.toggleFinishedActive = function(){
+	this.config.showFinishedActive = this.config.showFinishedActive == 0 ? 1 : 0;
 };
