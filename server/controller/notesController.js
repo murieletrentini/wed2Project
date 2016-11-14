@@ -19,7 +19,7 @@ module.exports.showIndex = function (req, res) {
 				showFinishedActive: req.cookies.showFinishedActive
 			});
 		} else {
-			res.redirect('/getNotes?submit=' + sortOrder);
+			getSorted(sortOrder,res);
 		}
 
 	});
@@ -70,6 +70,10 @@ module.exports.getNotes = function (req, res) {
 		config.config.sortOrder = sortOrder;
 		res.cookie('sortOrder', sortOrder);
 	}
+	getSorted(sortOrder, res);
+};
+
+var getSorted = function (sortOrder, res) {
 	store.getAll(function (error, notes) {
 		if (error) {
 			res.render("error", {error: error});
