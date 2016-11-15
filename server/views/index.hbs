@@ -14,7 +14,7 @@
 		</form>
 	</div>
 	<form action="/getNotes" method="get" class="noteListBottom">
-		<fieldset>
+		<fieldset class="fieldSetBottom">
 			<legend>Sort by</legend>
 			<button {{#if_equal config.sortOrder "dateDue"}}class="pressed"{{/if_equal}} type="submit" name="submit"
 					value="dateDue">Date Due

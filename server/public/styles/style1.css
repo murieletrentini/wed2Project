@@ -73,6 +73,11 @@ fieldset{
         align-content:flex-start;
     }
 }
+@media (max-width:50em){
+    .fieldSetBottom{
+        width: 1em;
+    }
+}
 .buttonSection{
     display:flex;
     flex-direction: row;
