@@ -35,12 +35,6 @@ function publicSetFinished(id, callback) {
 	});
 }
 
-function publicGetFinished(callback){
-	db.find({"done": true}, function(err, docs){
-		callback(err, docs);
-	});
-}
-
 function publicGet(id, callback) {
 	db.findOne({_id: id}, function (err, doc) {
 		callback(err, doc);
@@ -55,4 +49,4 @@ function publicGetAll(callback) {
 
 
 
-module.exports = {add: publicAddNote, updateFinished: publicSetFinished, getFinished: publicGetFinished, get: publicGet, getAll: publicGetAll, update: publicUpdate};
+module.exports = {add: publicAddNote, updateFinished: publicSetFinished, get: publicGet, getAll: publicGetAll, update: publicUpdate};

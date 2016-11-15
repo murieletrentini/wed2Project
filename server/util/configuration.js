@@ -1,5 +1,5 @@
 module.exports.config = {
-	styleSwitcher: "",
+	styleSwitcher: "1",
 	sortOrder: "",
 	order: 1,
 	showFinishedActive: 0
@@ -7,7 +7,7 @@ module.exports.config = {
 
 module.exports.changeStyle = function (req, res) {
 	var styleSwitcher = req.cookies.styleSwitcher;
-	styleSwitcher = (styleSwitcher === "true") ? "false" : "true";
+	styleSwitcher = (styleSwitcher==="1")?"2":"1";
 	res.cookie('styleSwitcher', styleSwitcher);
 	res.redirect('/');
 };
@@ -17,5 +17,5 @@ module.exports.switchOrder = function () {
 };
 
 module.exports.toggleFinishedActive = function(){
-	this.config.showFinishedActive = this.config.showFinishedActive == 0 ? 1 : 0;
+	this.config.showFinishedActive = this.config.showFinishedActive == "0" ? "1" : "0";
 };

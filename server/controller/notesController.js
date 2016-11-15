@@ -3,19 +3,22 @@ var config = require("../util/configuration.js");
 
 
 module.exports.showIndex = function (req, res) {
-	store.getAll(function (error, notes) {
-		if (error) {
+	store.getAll(function (err, docs) {
+		var notes = docs;
+		if (config.config.showFinishedActive == "1") {
+			notes = docs.filter(function (a) {
+				return !a.done;
+			});
+		}
+		if (err) {
 			res.render("error", {error: error});
 		}
-		if (notes.size === 0) {
-			notes.isEmpty = true;
-		}
 		var sortOrder = config.config.sortOrder;
+
 		if (sortOrder === undefined) {
 			res.render("index", {
 				notes: notes,
-				config: config.config,
-				toggleFinishedActive: req.cookies.toggleFinishedActive
+				config: config.config
 			});
 		} else {
 			getSorted(sortOrder,res);
@@ -73,7 +76,13 @@ module.exports.getNotes = function (req, res) {
 };
 
 var getSorted = function (sortOrder, res) {
-	store.getAll(function (error, notes) {
+	store.getAll(function (error, docs) {
+		var notes = docs;
+		if (config.config.showFinishedActive == "1") {
+			notes = docs.filter(function (a) {
+				return !a.done;
+			});
+		}
 		if (error) {
 			res.render("error", {error: error});
 		}
@@ -102,39 +111,23 @@ var getSorted = function (sortOrder, res) {
 };
 
 module.exports.showFinished = function (req, res) {
-    if(config.config.showFinishedActive==1){
-		store.getAll(function (err, docs) {
-			if (err) {
-				res.render("error", {error: err});
-			}
-			if (typeof docs === 'undefined') {
-				docs.isEmpty = true;
-			}
-			res.render("index", {
-				notes: docs,
-				sortOrder: req.cookies.sortOrder,
-				styleSwitcher: req.cookies.styleSwitcher
+    store.getAll(function (err, docs) {
+		var notes = docs;
+		if (config.config.showFinishedActive == "0") {
+			notes = docs.filter(function (a) {
+				return !a.done;
 			});
-            config.toggleFinishedActive();
-		})
-	} else {
-		store.getFinished(function (err, docs) {
-			if (err) {
-				res.render("error", {error: err});
-			}
-			if (docs.length === 0) {
-				docs.isEmpty = true;
-			}
-			res.render("index", {
-				notes: docs,
-				sortOrder: req.cookies.sortOrder,
-				styleSwitcher: req.cookies.styleSwitcher
-			});
-            config.toggleFinishedActive();
+		}
+        if (err) {
+            res.render("error", {error: err});
+        }
+        res.render("index", {
+            notes: notes,
+            config: config.config
         });
-    }
+        config.toggleFinishedActive();
+    });
 };
-
 
 var callbackShowIndex = function (res, error) {
 	if (error) {

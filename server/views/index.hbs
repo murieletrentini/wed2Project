@@ -7,10 +7,10 @@
 			<button type="submit">Create new Note</button>
 		</form>
 		<form action="/changeStyle" method="get">
-			<button {{#if_equal config.styleSwitcher "true"}}class="pressed"{{/if_equal}} type="submit" value="styleSwitcher">Switch style!</button>
+			<button {{#if_equal config.styleSwitcher "2"}} class="pressed"{{/if_equal}}type="submit" value="styleSwitcher">Switch style!</button>
 		</form>
 		<form action="/showFinished" method="get">
-			<button type="submit" method="get" >Show {{#if_equal showFinishedActive true}}All{{/if_equal}}{{#_if_not showFinishedActive}}Finished{{/_if_not}}</button>
+			<button type="submit" method="get" >Show {{#unless config.showFinishedActive}}Unfinished{{/unless}}{{#if_equal config.showFinishedActive "1"}}All{{/if_equal}}{{#if_equal config.showFinishedActive "0"}}Unfinished{{/if_equal}}</button>
 		</form>
 	</div>
 	<form action="/getNotes" method="get" class="noteListBottom">
@@ -29,10 +29,10 @@
 	</form>
 
 	<div id="noteContainer">
+        {{#unless notes}}
+            <div id="emptyNoteContainer">No Todos found</div>
+        {{/unless}}
 		{{#each notes}}
-            {{#_if isEmpty}}
-                <div id="emptyNoteContainer">No Todos found</div>
-            {{/_if}}
 			<form class="finishedNote" action="/editNote" method="post">
 				<div class="noteTitleRow">
 					<span>{{dateFormat dueDate "D. MMM YYYY"}}</span>
