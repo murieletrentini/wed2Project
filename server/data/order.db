@@ -1,8 +1,0 @@
-{"noteTitle":"Test","description":"t","priority":3,"dueDate":{"$$date":1479168000000},"createdDate":"11/15/2016, 5:58:51 PM","done":true,"_id":"KnOiXkXOjiDt7v3U"}
-{"noteTitle":"Title","description":"Testdescription","priority":4,"dueDate":{"$$date":1479168000000},"createdDate":"11/15/2016, 5:58:32 PM","done":false,"_id":"MY8PT07Pp1Fhze1c"}
-{"noteTitle":"as","description":"as","priority":2,"dueDate":{"$$date":1477958400000},"createdDate":"11/15/2016, 11:44:05 AM","done":true,"_id":"oxnhsHxIzMaFWtS4"}
-{"noteTitle":"Title","description":"Testdescription","priority":4,"dueDate":{"$$date":1479168000000},"createdDate":"11/15/2016, 6:14:59 PM","done":true,"_id":"MY8PT07Pp1Fhze1c"}
-{"noteTitle":"Test","description":"t","priority":3,"dueDate":{"$$date":1479168000000},"createdDate":"11/15/2016, 6:15:07 PM","done":false,"_id":"KnOiXkXOjiDt7v3U"}
-{"noteTitle":"as","description":"as","priority":2,"dueDate":{"$$date":1477958400000},"createdDate":"11/15/2016, 6:15:18 PM","done":false,"_id":"oxnhsHxIzMaFWtS4"}
-{"noteTitle":"Test","description":"t","priority":3,"dueDate":{"$$date":1479168000000},"createdDate":"11/15/2016, 6:15:23 PM","done":true,"_id":"KnOiXkXOjiDt7v3U"}
-{"noteTitle":"Title","description":"Testdescription","priority":4,"dueDate":{"$$date":1479168000000},"createdDate":"11/15/2016, 6:15:49 PM","done":false,"_id":"MY8PT07Pp1Fhze1c"}
