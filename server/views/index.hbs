@@ -16,13 +16,13 @@
 	<form action="/getNotes" method="get" class="noteListBottom">
 		<fieldset class="fieldSetBottom">
 			<legend>Sort by</legend>
-			<button {{#if_equal config.sortOrder "dateDue"}}class="pressed"{{/if_equal}} type="submit" name="submit"
+			<button class="{{#if_equal config.sortOrder "dateDue"}}pressed {{/if_equal}}sortButtons" type="submit" name="submit"
 					value="dateDue">Date Due
 			</button>
-			<button {{#if_equal config.sortOrder "dateCreated"}}class="pressed"{{/if_equal}} type="submit" name="submit"
+			<button class="{{#if_equal config.sortOrder "dateDue"}}pressed {{/if_equal}}sortButtons" type="submit" name="submit"
 					value="dateCreated">Date Created
 			</button>
-			<button {{#if_equal config.sortOrder "priority"}}class="pressed"{{/if_equal}} type="submit" name="submit"
+			<button class="{{#if_equal config.sortOrder "dateDue"}}pressed {{/if_equal}}sortButtons" type="submit" name="submit"
 					value="priority">Priority
 			</button>
 		</fieldset>
