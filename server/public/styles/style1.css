@@ -1,34 +1,37 @@
 /**RESET**/
-*{
+* {
     padding: 0;
     margin: 0;
     font: 14px Helvetica, Arial;
     box-sizing: border-box;
 }
+
 /**GENERAL**/
 .content {
     display: flex;
     flex-direction: column;
     margin: 1em 10%;
 }
-header{
+
+header {
     border-bottom: 1px solid lightgray;
     width: 100%;
     text-align: center;
     margin-bottom: 1em;
 }
-h1{
+
+h1 {
     font-size: 24px;
     font-weight: bold;
 }
+
 .noteListTop {
     display: flex;
     justify-content: space-between;
 }
 
-
 /**BUTTONS**/
-button{
+button {
     border: 1px solid gray;
     border-radius: 5px;
     width: 140px;
@@ -36,39 +39,41 @@ button{
     background-color: transparent;
     margin-bottom: 1em;
 }
-button:hover{
+
+button:hover {
     background-color: #F1F1F1;
     cursor: hand;
 }
+
 .pressed {
     background: lightgray;
     color: black;
     box-shadow: 1px 1px 1px black inset;
 }
 
-
 /**SELECT**/
-#styleSwitcher{
+#styleSwitcher {
     height: 40px;
     width: 140px;
 }
+
 /**FIELDSET**/
-fieldset{
+fieldset {
     border: none;
     margin-top: 1em;
     padding: 1em;
 }
 
 /**FORMS**/
-#newNote > label,#newNote > span{
+#newNote > label, #newNote > span {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-weight: bold;
 }
 
-.buttonSection{
-    display:flex;
+.buttonSection {
+    display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
@@ -76,24 +81,27 @@ fieldset{
 .buttonSection > button {
     margin-top: 2em;
 }
-label > input:not(#doneCheck){
+
+label > input:not(#doneCheck) {
     border-radius: 3px;
     height: 40px;
     border: 1px solid lightgray;
     width: 80%;
     margin: 1em 0;
 }
+
 label > #doneCheck {
     margin-right: 1em;
 }
-label > textarea{
+
+label > textarea {
     height: 80px;
-    width:80%;
+    width: 80%;
 }
 
 /**NOTE**/
-.note{
-    display:flex;
+.note {
+    display: flex;
     align-content: stretch;
     border: 1px solid black;
     flex: 1 1 50%;
@@ -105,9 +113,10 @@ label > textarea{
     justify-content: space-between;
     flex-flow: column nowrap;
 }
-#emptyNoteContainer{
+
+#emptyNoteContainer {
     height: 3em;
-    font-size:15px;
+    font-size: 15px;
     padding-top: 1.5em;
     border: 1px solid gray;
     border-radius: 5px;
@@ -139,35 +148,39 @@ label > textarea{
     flex-shrink: 3;
 }
 
-.noteTitle{
+.noteTitle {
     padding-left: 1em;
 }
 
 .space {
     flex-grow: 1;
 }
-@media (max-width:50em){
-    #newNote > label,#newNote > span {
+
+@media (max-width: 50em) {
+    #newNote > label, #newNote > span {
         flex-direction: column;
-        align-content:flex-start;
     }
 
-    .content{
+    .content {
         margin: 1em 0.25em;
     }
-    #newNote{
+
+    #newNote {
         margin: 0;
     }
-    .noteListTop{
+
+    .noteListTop {
         display: flex;
         flex-direction: column;
         margin: 0 0.25em;
     }
+
     .noteListTop button, .sortButtons {
-         width: 100%;
-         margin: 0;
-     }
-    .noteContentRow{
+        width: 100%;
+        margin: 0;
+    }
+
+    .noteContentRow {
         display: flex;
         flex-direction: column;
     }
@@ -176,23 +189,34 @@ label > textarea{
         margin: 0
     }
 
-    .noteContentRow>button{
+    .noteContentRow > button {
         width: 50%;
         margin-top: 0.5em;
     }
+
     .noteTitleRow {
         display: flex;
         flex-flow: row nowrap;
     }
-    .noteTitleRow > p{
+
+    .noteTitleRow > p {
         overflow: hidden;
     }
-    .buttonSection{
+
+    .buttonSection {
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: flex-start;
+        margin: 1em 10%;
     }
+
     .buttonSection > button {
-           margin-top: 1em;
-       }
+        margin-top: 1em;
+        margin-right: 0.5em;
+        width:5em;
+    }
+
+    .editNote {
+        max-width: 6em;
+    }
 }
