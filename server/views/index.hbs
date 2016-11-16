@@ -35,9 +35,10 @@
 		{{#each notes}}
 			<form class="finishedNote" action="/editNote" method="post">
 				<div class="noteTitleRow">
-					<span>{{dateFormat dueDate "D. MMM YYYY"}}</span>
-					<p>{{noteTitle}}</p>
-					<span>{{#multiply priority}}
+					<span class="noteDate">{{dateFormat dueDate "D. MMM YYYY"}}</span>
+					<p class="noteTitle">{{noteTitle}}</p>
+					<span class="space"></span>
+					<span class="notePrio">{{#multiply priority}}
 						&#x26a1;
 					{{/multiply}}</span>
 				</div>
