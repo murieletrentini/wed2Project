@@ -184,9 +184,8 @@ label > textarea{
     }
     .buttonSection{
         display: flex;
-        background-color: blue;
         flex-direction: row;
-        justify-content: flex-start;
+        justify-content: center;
     }
     .buttonSection > button {
            margin-top: 1em;
