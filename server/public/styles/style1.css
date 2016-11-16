@@ -132,7 +132,7 @@ label > textarea{
 .noteContentRow > textarea {
     flex-grow: 1;
     padding: 0.5em;
-    margin: 0;
+    margin: 0 1em;
 }
 
 .noteContentRow > .editNote {
@@ -171,6 +171,11 @@ label > textarea{
         display: flex;
         flex-direction: column;
     }
+
+    .noteContentRow > textarea {
+        margin: 0
+    }
+
     .noteContentRow>button{
         width: 50%;
         margin-top: 0.5em;
