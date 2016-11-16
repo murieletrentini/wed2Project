@@ -142,7 +142,6 @@ label > textarea{
 .noteTitleRow, .noteContentRow {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
     padding: 0.5em 0;
 }
 
@@ -154,4 +153,12 @@ label > textarea{
 
 .noteContentRow > .editNote {
     flex-shrink: 3;
+}
+
+.noteTitle{
+    padding-left: 1em;
+}
+
+.space {
+    flex-grow: 1;
 }
