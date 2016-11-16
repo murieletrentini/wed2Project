@@ -65,28 +65,7 @@ fieldset{
     align-items: center;
     font-weight: bold;
 }
-@media (max-width:50em){
-    #newNote > label{
-        flex-direction: column;
-        align-content:flex-start;
-    }
-    .content{
-        margin: 1em 0;
-    }
-    #newNote{
-        margin: 0;
-    }
-    .buttonSection{
-        display: flex;
-        background-color: blue;
-        flex-direction: row;
-    }
-}
-@media (max-width:50em){
-    .fieldSetBottom{
-        width: 1em;
-    }
-}
+
 .buttonSection{
     display:flex;
     flex-direction: row;
@@ -110,9 +89,6 @@ label > textarea{
     align-content: stretch;
     border: 1px solid black;
     flex: 1 1 50%;
-}
-#noteContent{
-    flex-grow: 5;
 }
 
 /**NOTES-TEMPLATE ON INDEXPAGE**/
@@ -161,4 +137,40 @@ label > textarea{
 
 .space {
     flex-grow: 1;
+}
+@media (max-width:50em){
+    #newNote > label{
+        flex-direction: column;
+        align-content:flex-start;
+    }
+    button{
+        width: 100%;
+        margin: 0;
+    }
+    .content{
+        margin: 1em 0.25em;
+    }
+    #newNote{
+        margin: 0;
+    }
+    .noteListTop{
+        display: flex;
+        flex-direction: column;
+        margin: 1em 0.25em;
+    }
+    .noteContentRow{
+        display: flex;
+        flex-direction: column;
+    }
+    .noteContentRow>button{
+        width: 50%;
+    }
+    .noteTitleRow {
+        display: flex;
+        flex-flow: row nowrap;
+    }
+    .noteTitleRow > p{
+        overflow: hidden;
+    }
+
 }

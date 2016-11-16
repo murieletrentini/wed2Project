@@ -1,10 +1,17 @@
-<<<<<<< HEAD
-{"noteTitle":"aa","description":"description","priority":5,"dueDate":{"$$date":1478736000000},"createdDate":"11/16/2016, 3:04:23 PM","done":true,"_id":"JSuNpAeVfb4jwk73"}
-{"noteTitle":"Example note","description":"Example descr","priority":3,"dueDate":{"$$date":1479254400000},"createdDate":"11/16/2016, 3:03:15 PM","done":false,"_id":"e4MgOcU9owBIz2qI"}
-{"noteTitle":"Second Note","description":"Slek","priority":2,"dueDate":{"$$date":1479081600000},"createdDate":"11/16/2016, 3:03:37 PM","done":false,"_id":"eMvCMAaKnftyNQeP"}
-=======
-{"noteTitle":"alt","description":"alt","priority":4,"dueDate":{"$$date":1478822400000},"createdDate":"11/16/2016, 8:46:58 AM","done":false,"_id":"9Q4jUjtuLxIoRTGd"}
-{"noteTitle":"ganzneu","description":"blubb","priority":5,"dueDate":{"$$date":1479513600000},"createdDate":"11/16/2016, 8:46:36 AM","done":false,"_id":"Haduyzztk20BoUcc"}
-{"noteTitle":"hallo","description":"test","priority":2,"dueDate":{"$$date":1479081600000},"createdDate":"11/16/2016, 8:45:10 AM","done":true,"_id":"dgmASAfkScQCaiZd"}
-{"noteTitle":"neu","description":"123","priority":3,"dueDate":{"$$date":1479254400000},"createdDate":"11/16/2016, 8:46:11 AM","done":false,"_id":"hcbQbIp4jTRyoPEI"}
->>>>>>> 648a92eca26c4def6b44b4b484984754edfb5b08
+{"noteTitle":"as","description":"aasd","priority":2,"dueDate":{"$$date":1479254400000},"createdDate":"11/16/2016, 3:39:30 PM","done":false,"_id":"cqrWjLowdSkpkMfw"}
+{"noteTitle":"asasssssssssssssssssssssssssssssssssssss","description":"aasd","priority":2,"dueDate":{"$$date":1479254400000},"createdDate":"11/16/2016, 4:09:22 PM","done":false,"_id":"cqrWjLowdSkpkMfw"}
+{"noteTitle":"asasssssssssssssssssAssssssssssssssssssssasasssssssssssssssssAssssssssssssssssssssasasssssssssssssssssAssssssssssssssssssss","description":"aasd","priority":2,"dueDate":{"$$date":1479254400000},"createdDate":"11/16/2016, 4:11:22 PM","done":false,"_id":"cqrWjLowdSkpkMfw"}
+{"noteTitle":"aslöjw","description":"aasd","priority":2,"dueDate":{"$$date":1479254400000},"createdDate":"11/16/2016, 4:13:58 PM","done":false,"_id":"cqrWjLowdSkpkMfw"}
+{"noteTitle":"aslöjwasdfawefwqfqwef","description":"aasd","priority":2,"dueDate":{"$$date":1479254400000},"createdDate":"11/16/2016, 4:14:08 PM","done":false,"_id":"cqrWjLowdSkpkMfw"}
+{"noteTitle":"aslöjwasdfaweassadffwqfqwef","description":"aasd","priority":2,"dueDate":{"$$date":1479254400000},"createdDate":"11/16/2016, 4:14:13 PM","done":false,"_id":"cqrWjLowdSkpkMfw"}
+{"noteTitle":"aslöjwasdfaweasdsafasdfasdfassadffwqfqwef","description":"aasd","priority":2,"dueDate":{"$$date":1479254400000},"createdDate":"11/16/2016, 4:14:20 PM","done":false,"_id":"cqrWjLowdSkpkMfw"}
+{"noteTitle":"aslöjwasdfaweasdsafasdfasdfassadffwqfqwefaslöjwasdfaweasdsafasdfasdfassadffwqfqwef","description":"aasd","priority":2,"dueDate":{"$$date":1479254400000},"createdDate":"11/16/2016, 4:16:29 PM","done":false,"_id":"cqrWjLowdSkpkMfw"}
+{"noteTitle":"klasöda","description":"aasd","priority":2,"dueDate":{"$$date":1479254400000},"createdDate":"11/16/2016, 4:17:28 PM","done":true,"_id":"cqrWjLowdSkpkMfw"}
+{"noteTitle":"klasödaasdfasdasdf","description":"aasd","priority":2,"dueDate":{"$$date":1479254400000},"createdDate":"11/16/2016, 4:17:43 PM","done":true,"_id":"cqrWjLowdSkpkMfw"}
+{"noteTitle":"klasödaasdfasdasdasdfasdfasdf","description":"aasd","priority":2,"dueDate":{"$$date":1479254400000},"createdDate":"11/16/2016, 4:17:47 PM","done":true,"_id":"cqrWjLowdSkpkMfw"}
+{"noteTitle":"klasödaasdfasdaaswgqsdasdfasdfasdf","description":"aasd","priority":2,"dueDate":{"$$date":1479254400000},"createdDate":"11/16/2016, 4:18:05 PM","done":true,"_id":"cqrWjLowdSkpkMfw"}
+{"noteTitle":"klasödaasdfasdamm,,m,maswgqsdasdfasdfasdf","description":"aasd","priority":2,"dueDate":{"$$date":1479254400000},"createdDate":"11/16/2016, 4:18:20 PM","done":true,"_id":"cqrWjLowdSkpkMfw"}
+{"noteTitle":"klasödaasdfasdamm,,m,maswgqsdasdfasdfasdfklasödaasdfasdamm,,m,maswgqsdasdfasdfasdf","description":"aasd","priority":2,"dueDate":{"$$date":1479254400000},"createdDate":"11/16/2016, 4:19:30 PM","done":true,"_id":"cqrWjLowdSkpkMfw"}
+{"noteTitle":"Oijaslk","description":"aasd","priority":2,"dueDate":{"$$date":1479254400000},"createdDate":"11/16/2016, 4:19:51 PM","done":true,"_id":"cqrWjLowdSkpkMfw"}
+{"noteTitle":"OijaslkOijaslkOijaslk","description":"aasd","priority":2,"dueDate":{"$$date":1479254400000},"createdDate":"11/16/2016, 4:20:04 PM","done":true,"_id":"cqrWjLowdSkpkMfw"}
+{"noteTitle":"OijaslkOijaslkOijaslkOijaslkOijaslkOijaslk","description":"aasd","priority":2,"dueDate":{"$$date":1479254400000},"createdDate":"11/16/2016, 4:20:13 PM","done":true,"_id":"cqrWjLowdSkpkMfw"}
