@@ -1,0 +1,3 @@
+{"noteTitle":"aa","description":"description","priority":5,"dueDate":{"$$date":1478736000000},"createdDate":"11/16/2016, 3:04:23 PM","done":true,"_id":"JSuNpAeVfb4jwk73"}
+{"noteTitle":"Example note","description":"Example descr","priority":3,"dueDate":{"$$date":1479254400000},"createdDate":"11/16/2016, 3:03:15 PM","done":false,"_id":"e4MgOcU9owBIz2qI"}
+{"noteTitle":"Second Note","description":"Slek","priority":2,"dueDate":{"$$date":1479081600000},"createdDate":"11/16/2016, 3:03:37 PM","done":false,"_id":"eMvCMAaKnftyNQeP"}

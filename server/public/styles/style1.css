@@ -31,7 +31,6 @@ button{
     border: 1px solid gray;
     border-radius: 5px;
     width: 140px;
-    min-width:140px;
     height: 40px;
     background-color: transparent;
     margin-bottom: 1em;
@@ -70,6 +69,17 @@ fieldset{
     #newNote > label{
         flex-direction: column;
         align-content:flex-start;
+    }
+    .content{
+        margin: 1em 0;
+    }
+    #newNote{
+        margin: 0;
+    }
+    .buttonSection{
+        display: flex;
+        background-color: blue;
+        flex-direction: row;
     }
 }
 @media (max-width:50em){
