@@ -23,6 +23,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(function (req, res, next) {
 	config.config.styleSwitcher = req.cookies.styleSwitcher;
+	config.config.showFinishedActive = req.cookies.showFinishedActive;
 	config.config.sortOrder = req.cookies.sortOrder;
 	config.config.order = req.cookies.order || 1;
 	next();

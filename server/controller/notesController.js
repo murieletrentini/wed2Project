@@ -111,7 +111,8 @@ var getSorted = function (sortOrder, res) {
 };
 
 module.exports.showFinished = function (req, res) {
-    store.getAll(function (err, docs) {
+	config.toggleFinishedActive(req,res);
+	store.getAll(function (err, docs) {
 		var notes = docs;
 		if (config.config.showFinishedActive == "0") {
 			notes = docs.filter(function (a) {
@@ -125,7 +126,6 @@ module.exports.showFinished = function (req, res) {
             notes: notes,
             config: config.config
         });
-        config.toggleFinishedActive();
     });
 };
 
