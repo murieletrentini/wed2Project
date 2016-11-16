@@ -3,6 +3,7 @@
     padding: 0;
     margin: 0;
     font: 14px Helvetica, Arial;
+    box-sizing: border-box;
 }
 /**GENERAL**/
 .content {
@@ -131,7 +132,7 @@ label > textarea{
 .noteContentRow > textarea {
     flex-grow: 1;
     padding: 0.5em;
-    margin: 0 1em;
+    margin: 0;
 }
 
 .noteContentRow > .editNote {
@@ -160,9 +161,9 @@ label > textarea{
     .noteListTop{
         display: flex;
         flex-direction: column;
-        margin: 1em 0.25em;
+        margin: 0 0.25em;
     }
-    .noteListTop button, .sortButtons{
+    .noteListTop button, .sortButtons {
          width: 100%;
          margin: 0;
      }
@@ -172,6 +173,7 @@ label > textarea{
     }
     .noteContentRow>button{
         width: 50%;
+        margin-top: 0.5em;
     }
     .noteTitleRow {
         display: flex;
@@ -189,7 +191,4 @@ label > textarea{
     .buttonSection > button {
            margin-top: 1em;
        }
-    .fieldSetBottom{
-        width: 1em;
-    }
 }

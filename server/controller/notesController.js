@@ -110,24 +110,6 @@ var getSorted = function (sortOrder, res) {
 	});
 };
 
-module.exports.showFinished = function (req, res) {
-	config.toggleFinishedActive(req,res);
-	store.getAll(function (err, docs) {
-		var notes = docs;
-		if (config.config.showFinishedActive == "0") {
-			notes = docs.filter(function (a) {
-				return !a.done;
-			});
-		}
-        if (err) {
-            res.render("error", {error: err});
-        }
-        res.render("index", {
-            notes: notes,
-            config: config.config
-        });
-    });
-};
 
 var callbackShowIndex = function (res, error) {
 	if (error) {
