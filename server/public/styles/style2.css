@@ -1,0 +1,16 @@
+body{
+    background-color: lightskyblue;
+}
+button{
+    background-color: dodgerblue;
+    color: white;
+}
+button:hover{
+    background: #80bfff;
+}
+.pressed {
+    background: #0066cc;
+}
+#emptyNoteContainer{
+    background-color: #80bfff;
+}
