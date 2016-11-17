@@ -2,36 +2,37 @@
 	<header>
 		<h1>Note List</h1>
 	</header>
-	<div class="noteListTop">
-		<form action="/addNewNote" method="post">
-			<button type="submit">Create new Note</button>
-		</form>
-		<form action="/changeStyle" method="get">
-			<button {{#if_equal config.styleSwitcher "2"}} class="pressed"{{/if_equal}}type="submit" value="styleSwitcher">Switch style!</button>
-		</form>
-		<form action="/showFinished" method="get">
-			<button type="submit" method="get" >Show {{#unless config.showFinishedActive}}Unfinished{{/unless}}{{#if_equal config.showFinishedActive "1"}}All{{/if_equal}}{{#if_equal config.showFinishedActive "0"}}Unfinished{{/if_equal}}</button>
-		</form>
-	</div>
+	<form class="noteListTop">
+		<button type="submit" formmethod="get" formaction="/addOrEditNote">Create new Note</button>
+		<button formmethod="get" formaction="/changeStyle" {{#if_equal config.styleSwitcher "2"}}
+				class="pressed"{{/if_equal}}type="submit" value="styleSwitcher">Switch style!
+		</button>
+		<button formmethod="get" formaction="/showFinished" type="submit" method="get">Show {{#unless
+				config.showFinishedActive}}Unfinished{{/unless}}{{#if_equal config.showFinishedActive "1"}}
+			All{{/if_equal}}{{#if_equal config.showFinishedActive "0"}}Unfinished{{/if_equal}}</button>
+	</form>
 	<form action="/getNotes" method="get" class="noteListBottom">
 		<fieldset class="fieldSetBottom">
 			<legend>Sort by</legend>
-			<button class="{{#if_equal config.sortOrder "dateDue"}}pressed {{/if_equal}}sortButtons" type="submit" name="submit"
+			<button class="{{#if_equal config.sortOrder "dateDue"}}pressed {{/if_equal}}sortButtons" type="submit"
+					name="submit"
 					value="dateDue">Date Due
 			</button>
-			<button class="{{#if_equal config.sortOrder "dateCreated"}}pressed {{/if_equal}}sortButtons" type="submit" name="submit"
+			<button class="{{#if_equal config.sortOrder "dateCreated"}}pressed {{/if_equal}}sortButtons" type="submit"
+					name="submit"
 					value="dateCreated">Date Created
 			</button>
-			<button class="{{#if_equal config.sortOrder "priority"}}pressed {{/if_equal}}sortButtons" type="submit" name="submit"
+			<button class="{{#if_equal config.sortOrder "priority"}}pressed {{/if_equal}}sortButtons" type="submit"
+					name="submit"
 					value="priority">Priority
 			</button>
 		</fieldset>
 	</form>
 
 	<div id="noteContainer">
-        {{#unless notes}}
-            <div id="emptyNoteContainer">No Todos found</div>
-        {{/unless}}
+		{{#unless notes}}
+			<div id="emptyNoteContainer">No Todos found</div>
+		{{/unless}}
 		{{#each notes}}
 			<form class="finishedNote" action="/editNote" method="post">
 				<div class="noteTitleRow">

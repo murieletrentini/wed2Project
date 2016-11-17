@@ -27,7 +27,7 @@ module.exports.showIndex = function (req, res) {
 	});
 };
 
-module.exports.addNewNote = function (req, res) {
+module.exports.addOrEditNote = function (req, res) {
 	var title;
 	if (req.body._id) {
 		title = "Edit Note";
@@ -35,12 +35,12 @@ module.exports.addNewNote = function (req, res) {
 			if (error) {
 				res.render("error", {error: error});
 			}
-			res.render("addNewNote", {title: title, note: note, config: config.config});
+			res.render("addOrEditNote", {title: title, note: note, config: config.config});
 		});
 	} else {
 		title = "New Note";
 		var note = {};
-		res.render("addNewNote", {title: title, note: note, config: config.config});
+		res.render("addOrEditNote", {title: title, note: note, config: config.config});
 	}
 
 };

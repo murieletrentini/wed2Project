@@ -5,9 +5,9 @@ var config = require('../util/configuration.js');
 
 router.get("/", notes.showIndex);
 router.post("/", notes.saveNote);
-router.post("/addNewNote", notes.addNewNote);
+router.get("/addOrEditNote", notes.addOrEditNote);
 router.get("/getNotes", notes.getNotes);
-router.post("/editNote", notes.addNewNote);
+router.post("/editNote", notes.addOrEditNote);
 router.get("/showFinished", config.toggleFinishedActive);
 router.get("/changeStyle", config.changeStyle);
 

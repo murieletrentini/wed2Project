@@ -126,10 +126,13 @@ label > textarea {
 }
 
 .finishedNote {
-    padding: 1em;
+    padding: 0.5em;
+    margin: 0.25em 0;
     display: flex;
     justify-content: space-between;
     flex-flow: column nowrap;
+    border: solid 1px lightgray;
+    border-radius: 0.5em;
 }
 
 .noteTitleRow, .noteContentRow {
@@ -218,5 +221,6 @@ label > textarea {
 
     .editNote {
         max-width: 6em;
+        margin-bottom: 0;
     }
 }
