@@ -1,10 +1,10 @@
-var store = require("../services/notesStore.js");
-var config = require("../util/configuration.js");
+let store = require("../services/notesStore.js");
+let config = require("../util/configuration.js");
 
 
 module.exports.showIndex = function (req, res) {
 	store.getAll(function (err, docs) {
-		var notes = docs;
+		let notes = docs;
 		if (config.config.showFinishedActive == "1") {
 			notes = docs.filter(function (a) {
 				return !a.done;
@@ -13,7 +13,7 @@ module.exports.showIndex = function (req, res) {
 		if (err) {
 			res.render("error", {error: error});
 		}
-		var sortOrder = config.config.sortOrder;
+		let sortOrder = config.config.sortOrder;
 
 		if (sortOrder === undefined) {
 			res.render("index", {
@@ -64,7 +64,7 @@ module.exports.saveNote = function (req, res) {
 };
 
 module.exports.getNotes = function (req, res) {
-	var sortOrder = req.query.submit;
+	let sortOrder = req.query.submit;
 	if (config.config.sortOrder == sortOrder) {
 		config.switchOrder();
 		res.cookie('order', config.config.order);
@@ -75,7 +75,7 @@ module.exports.getNotes = function (req, res) {
 	getSorted(sortOrder, res);
 };
 
-var getSorted = function (sortOrder, res) {
+let getSorted = function (sortOrder, res) {
 	store.getAll(function (error, docs) {
 		var notes = docs;
 		if (config.config.showFinishedActive == "1") {
@@ -111,7 +111,7 @@ var getSorted = function (sortOrder, res) {
 };
 
 
-var callbackShowIndex = function (res, error) {
+let callbackShowIndex = function (res, error) {
 	if (error) {
 		res.render("error", {error: error});
 	}

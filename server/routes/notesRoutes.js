@@ -1,7 +1,7 @@
-var express = require('express');
-var router = express.Router();
-var notes = require('../controller/notesController.js');
-var config = require('../util/configuration.js');
+let express = require('express');
+let router = express.Router();
+let notes = require('../controller/notesController.js');
+let config = require('../util/configuration.js');
 
 router.get("/", notes.showIndex);
 router.post("/", notes.saveNote);

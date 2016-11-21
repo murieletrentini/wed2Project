@@ -1,5 +1,5 @@
-var Datastore = require('nedb');
-var db = new Datastore({filename: '../data/order.db', autoload: true});
+let Datastore = require('nedb');
+let db = new Datastore({filename: '../data/order.db', autoload: true});
 
 function Note(noteTitle, description, priority, dueDate, done) {
 	this.noteTitle = noteTitle;
@@ -11,7 +11,7 @@ function Note(noteTitle, description, priority, dueDate, done) {
 }
 
 function publicAddNote(noteTitle, description, priority, dueDate, done, callback) {
-	var note = new Note(noteTitle, description, priority, dueDate, done);
+	let note = new Note(noteTitle, description, priority, dueDate, done);
 
 	db.insert(note, function (err, newDoc) {
 		if (callback) {
@@ -21,7 +21,7 @@ function publicAddNote(noteTitle, description, priority, dueDate, done, callback
 }
 
 function publicUpdate(noteTitle, description, priority, dueDate, done, id,callback) {
-	var note = new Note(noteTitle, description, priority, dueDate, done);
+	let note = new Note(noteTitle, description, priority, dueDate, done);
 	db.update({_id: id}, note ,function (err, doc) {
 		if (callback) {
 			callback(err, doc);
