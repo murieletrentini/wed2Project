@@ -1,3 +1,4 @@
+
 module.exports.config = {
 	styleSwitcher: "1",
 	sortOrder: "",
@@ -6,6 +7,7 @@ module.exports.config = {
 };
 
 module.exports.changeStyle = function (req, res) {
+	"use strict";
 	let styleSwitcher = req.cookies.styleSwitcher;
 	styleSwitcher = (styleSwitcher === "1") ? "2" : "1";
 	res.cookie('styleSwitcher', styleSwitcher);
@@ -17,6 +19,7 @@ module.exports.switchOrder = function () {
 };
 
 module.exports.toggleFinishedActive = function (req, res) {
+	"use strict";
 	let showFinishedActive = req.cookies.showFinishedActive;
 	showFinishedActive = showFinishedActive == "0" ? "1" : "0";
 	res.cookie('showFinishedActive', showFinishedActive);

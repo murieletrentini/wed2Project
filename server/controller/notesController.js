@@ -1,3 +1,4 @@
+"use strict";
 let store = require("../services/notesStore.js");
 let config = require("../util/configuration.js");
 

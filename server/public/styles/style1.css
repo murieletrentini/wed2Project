@@ -223,4 +223,10 @@ label > textarea {
         max-width: 6em;
         margin-bottom: 0;
     }
+    label > textarea {
+        width: 95%;
+    }
+    label > input:not(#doneCheck) {
+        width:95%;
+    }
 }

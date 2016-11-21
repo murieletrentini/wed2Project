@@ -1,3 +1,4 @@
+"use strict";
 let Datastore = require('nedb');
 let db = new Datastore({filename: '../data/order.db', autoload: true});
 
