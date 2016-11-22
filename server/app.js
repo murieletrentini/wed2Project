@@ -1,13 +1,14 @@
-var express = require('express');
-var path = require('path');
-var bodyParser = require('body-parser');
-var cookieParser = require('cookie-parser');
+"use strict";
+let express = require('express');
+let path = require('path');
+let bodyParser = require('body-parser');
+let cookieParser = require('cookie-parser');
 hbs = require('hbs');
-var config = require('./util/configuration.js');
+let config = require('./util/configuration.js');
 
-var routes = require('./routes/notesRoutes');
+let routes = require('./routes/notesRoutes');
 
-var app = express();
+let app = express();
 
 // view engine setup
 hbs.registerHelper('dateFormat', require('handlebars-dateformat'));
@@ -33,7 +34,7 @@ app.use('/', routes);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
-	var err = new Error('Not Found');
+	let err = new Error('Not Found');
 	err.status = 404;
 	next(err);
 });

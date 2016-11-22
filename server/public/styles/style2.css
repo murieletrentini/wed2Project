@@ -4,12 +4,14 @@ body{
 button{
     background-color: dodgerblue;
     color: white;
+    border: 1px solid #0066cc;
 }
 button:hover{
     background: #80bfff;
 }
 .pressed {
     background: #0066cc;
+    color: white;
 }
 #emptyNoteContainer{
     background-color: #80bfff;
@@ -21,4 +23,8 @@ button:hover{
 
 header {
     border-bottom: 1px solid #0066cc;
+}
+
+#emptyNoteContainer {
+    border: 1px solid #0066cc;
 }

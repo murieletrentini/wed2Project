@@ -117,7 +117,7 @@ label > textarea {
 #emptyNoteContainer {
     height: 3em;
     font-size: 15px;
-    padding-top: 1.5em;
+    padding-top: 1em;
     border: 1px solid gray;
     border-radius: 5px;
     text-align: center;
@@ -145,6 +145,7 @@ label > textarea {
     flex-grow: 1;
     padding: 0.5em;
     margin: 0 1em;
+    min-height: 5em;
 }
 
 .noteContentRow > .editNote {
@@ -153,6 +154,7 @@ label > textarea {
 
 .noteTitle {
     padding-left: 1em;
+    font-weight: bold;
 }
 
 .space {
@@ -189,12 +191,11 @@ label > textarea {
     }
 
     .noteContentRow > textarea {
-        margin: 0
+        margin: 0.5em 0
     }
 
     .noteContentRow > button {
-        width: 50%;
-        margin-top: 0.5em;
+        width: 25%;
     }
 
     .noteTitleRow {
@@ -220,7 +221,8 @@ label > textarea {
     }
 
     .editNote {
-        max-width: 6em;
+        max-width: 4em;
+        max-height: 2.5em;
         margin-bottom: 0;
     }
     label > textarea {
